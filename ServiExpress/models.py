@@ -58,11 +58,3 @@ class OrdenDePedido(models.Model):
     cantidad = models.IntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
-
-
-
-# Agregar el campo 'servicio' a la tabla Reserva
-Reserva.add_to_class('servicio', models.ForeignKey(Servicio, on_delete=models.CASCADE))
-
-# Agregar el campo 'empleado' a la tabla Orden_de_pedido
-OrdenDePedido.add_to_class('empleado', models.ForeignKey(Empleado, on_delete=models.CASCADE))

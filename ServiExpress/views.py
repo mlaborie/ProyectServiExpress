@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+def modulos_view(request):
+    return render(request, 'Modulos.html')
+
+def index(request):
+    return render(request, 'index.html')
