@@ -1,97 +1,100 @@
-{% load static %}
+    {% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>OnTour</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/Modulos.css' %}">
-    <link rel="icon" type="image/x-icon" href="../static/imgs/ServiExpress.png">
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="http://127.0.0.1:8000/"><h2>Start OnTour</h2></a>
-            
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-        </nav>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>ServiExpress</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/Modulos.css' %}">
+        <link rel="icon" type="image/x-icon" href="../static/imgs/ServiExpress.png">
+        </head>
+        <body class="sb-nav-fixed">
+            <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+                <!-- Navbar Brand-->
 
-<!-- Home -->        
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Home</div>
-                            <a class="nav-link" href="http://127.0.0.1:8000/"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Home</a>
+            <center>
+                    <a class="navbar-brand ps-3" href="http://127.0.0.1:8000/">
+                        <img src="../static/imgs/ServiExpress.png" alt="Office ServiExpress" width="120" height="120">
+                    </a>
+                <!-- Sidebar Toggle-->
+                <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            </center>
+            </nav>
 
 
-<!-- Adventure Planner-->        
-                            <div class="sb-sidenav-menu-heading">Adventure Planner</div>
-    <!-- Modulo Users-->                         
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsuarios" aria-expanded="false" aria-controls="collapseUsuarios">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Usuario <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
-                            <div class="collapse" id="collapseUsuarios" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="../CrearUsuario">Crear Usuario</a>
-                                    <a class="nav-link" href="../buscar_usuario_contratos">Buscar Usuario </a>
-                                    <a class="nav-link" href="../BuscarUsuario">Modificar Usuario</a>
-                                </nav>
-                            </div>
+    <!-- Home -->  
+          
+            <div id="layoutSidenav">
+                <div id="layoutSidenav_nav">
+                    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                        <div class="sb-sidenav-menu">
+                            <div class="nav">
+                                <br>  <br>  <br>  <br>  <br>
 
-    <!-- Modulo TravelPlan-->                         
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCronograma" aria-expanded="false" aria-controls="collapseCronograma">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Plan de Viaje <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
-                            <div class="collapse" id="collapseCronograma" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="../CrearCronograma">Crear Plan de Viaje</a>
+                                <div class="sb-sidenav-menu-heading">Home</div>
+                                <a class="nav-link" href="http://127.0.0.1:8000/"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Home</a>
 
-                                </nav>
-                            </div>
+
+    <!-- Adventure Planner-->        
+                                <div class="sb-sidenav-menu-heading">Adventure Planner</div>
+        <!-- Modulo Users-->                         
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsuarios" aria-expanded="false" aria-controls="collapseUsuarios">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Usuario <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                                <div class="collapse" id="collapseUsuarios" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="../CrearUsuario">Crear Usuario</a>
+                                        <a class="nav-link" href="../buscar_usuario_contratos">Buscar Usuario </a>
+                                        <a class="nav-link" href="../BuscarUsuario">Modificar Usuario</a>
+                                    </nav>
+                                </div>
+
+        <!-- Modulo TravelPlan-->                         
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCronograma" aria-expanded="false" aria-controls="collapseCronograma">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Plan de Viaje <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                                <div class="collapse" id="collapseCronograma" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="../CrearCronograma">Crear Plan de Viaje</a>
+
+                                    </nav>
+                                </div>
+                                
+        <!-- Modulo Contrato-->                                                     
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseContrato" aria-expanded="false" aria-controls="collapseContrato">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Contrato <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                                <div class="collapse" id="collapseContrato" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="../CrearContrato">Crear Contrato</a>
+                                    <!--   <a class="nav-link" href="../DetallesContrato">información de Contrato</a>--> 
+                                    </nav>
+                                </div>
+
+    <!-- Addons -->   
+
+                                
+
+
+                                
+
                             
-    <!-- Modulo Contrato-->                                                     
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseContrato" aria-expanded="false" aria-controls="collapseContrato">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Contrato <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
-                            <div class="collapse" id="collapseContrato" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="../CrearContrato">Crear Contrato</a>
-                                  <!--   <a class="nav-link" href="../DetallesContrato">información de Contrato</a>--> 
-                                </nav>
-                            </div>
 
-<!-- Addons -->   
 
+                    </nav>
+                </div>
+                <div id="layoutSidenav_content">
+                    <main>
+                        <div class="container-fluid px-4">
                             
 
 
-                            
-
-                           
-                <!--            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="..//AddonsGaleriaDestino"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>Galeria Destino</a>
-                            <a class="nav-link" href="../AddonsCarruselTestimonio"><div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>Testimonios</a></div>
-                        </div>
-                -->   
-
-                    <div class="sb-sidenav-footer"><div class="small"><p>&copy; 2023 Ontour. Todos los derechos reservados.</p></div> </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-    </body>
-</html>
-{% block content %}
-{% endblock %}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="js/scripts.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+            <script src="assets/demo/chart-area-demo.js"></script>
+            <script src="assets/demo/chart-bar-demo.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+            <script src="js/datatables-simple-demo.js"></script>
+        </body>
+    </html>
+    {% block content %}
+    {% endblock %}
