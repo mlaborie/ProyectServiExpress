@@ -7,5 +7,8 @@ urlpatterns = [
     path('', views.index, name='index'),  # Esta línea configura la página de inicio
 
     path('modulos/', views.modulos_view, name='modulos'),
+
+    path('FormularioReserva/', views.FormularioReserva, name='FormularioReserva')
+
     
 ]

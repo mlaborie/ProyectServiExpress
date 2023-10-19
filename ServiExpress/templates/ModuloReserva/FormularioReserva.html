@@ -1,0 +1,53 @@
+{% extends 'Modulos.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de reserva</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/ModuloReserva/FormularioReserva.css' %}">
+        <link rel="icon" type="image/x-icon" href="../static/imgs/logo.png">
+
+</head>
+<body>
+
+    <form action="/reservas/" method="post">
+        {% csrf_token %}
+
+        <h1>Formulario de reserva</h1>
+
+        <div class="datos-cliente">
+            <h2>Datos del cliente</h2>
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="apellido" placeholder="Apellido">
+            <input type="email" name="correo" placeholder="Correo electrónico">
+            <input type="tel" name="telefono" placeholder="Teléfono">
+            <input type="text" name="direccion" placeholder="Dirección">
+        </div>
+
+        <div class="datos-servicio">
+            <h2>Datos del servicio</h2>
+            <select name="servicio">
+                {% for servicio in servicios %}
+                <option value="{{ servicio.id }}">{{ servicio.nombre }}</option>
+                {% endfor %}
+            </select>
+            <input type="date" name="fecha" placeholder="Fecha">
+            <input type="time" name="hora" placeholder="Hora">
+        </div>
+
+        <div class="botones">
+            <input type="submit" value="Reservar">
+            <input type="reset" value="Cancelar">
+        </div>
+
+    </form>
+
+</body>
+</html>
+
+{% endblock %}
