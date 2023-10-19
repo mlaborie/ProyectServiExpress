@@ -8,7 +8,10 @@ urlpatterns = [
 
     path('modulos/', views.modulos_view, name='modulos'),
 
-    path('FormularioReserva/', views.FormularioReserva, name='FormularioReserva')
+    path('FormularioReserva/', views.FormularioReserva, name='FormularioReserva'),
+
+    path('reservas/', views.ReservaExitosa, name='ReservaExitosa'),
+
 
     
 ]
