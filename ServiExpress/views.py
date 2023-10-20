@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from ServiExpress.models import *
 from .forms import ReservaForm, LoginForm
 from django.contrib.auth import authenticate, login, logout
+from django.http import Http404
+
 
 
 
@@ -87,13 +89,50 @@ def crear_usuario(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        is_superuser = request.POST.get('is_superuser')  # Agrega un campo al formulario para indicar si es superusuario
+        is_superuser = 'is_superuser' in request.POST
+        first_name = request.POST.get('first_name')  # Obtener el valor del campo de nombre
+        last_name = request.POST.get('last_name')  # Obtener el valor del campo de apellido
+        email = request.POST.get('email')
+
         user = User.objects.create_user(username=username, password=password)
-        if is_superuser:
-            user.is_superuser = True  # Establecer como superusuario
-            user.save()
+        user.is_superuser = is_superuser
+        user.first_name = first_name  # Asignar el nombre
+        user.last_name = last_name  # Asignar el apellido
+        user.email = email
+        user.save()
         return redirect('administrar_usuarios')
     return render(request, 'administrar_usuarios.html')
+
+@login_required
+@user_passes_test(is_superuser, login_url='no_permisos')
+def editar_usuario(request):
+    if request.method == 'POST':
+        user_id = request.POST.get('user')
+        password = request.POST.get('password')
+        is_superuser = 'is_superuser' in request.POST
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+
+        try:
+            selected_user = User.objects.get(pk=user_id)
+        except User.DoesNotExist:
+            raise Http404("El usuario no existe")
+
+        # Actualiza los datos del usuario seleccionado
+        selected_user.is_superuser = is_superuser
+        if password:
+            selected_user.set_password(password)
+        selected_user.first_name = first_name
+        selected_user.last_name = last_name
+        selected_user.email = email
+        selected_user.save()
+
+        return redirect('administrar_usuarios')
+    else:
+        users = User.objects.all()
+        return render(request, 'administrar_usuarios.html', {'users': users})
+
 
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
@@ -121,27 +160,5 @@ def habilitar_usuario(request):
             pass  # El usuario no existe
     return redirect('administrar_usuarios')
 
-@login_required
-@user_passes_test(is_superuser, login_url='no_permisos')
-def editar_usuario(request):
-    if request.method == 'POST':
-        user_id = request.POST['user']
-        selected_user = User.objects.get(pk=user_id)
-        new_password = request.POST.get('new_password', '')
-        is_superuser = 'is_superuser' in request.POST
-        first_name = request.POST.get('first_name', '')  # Obtén el valor del campo de nombre
-        last_name = request.POST.get('last_name', '')    # Obtén el valor del campo de apellido
-        email = request.POST.get('email', '')            # Obtén el valor del campo de correo electrónico
 
-        # Actualiza los datos del usuario seleccionado
-        selected_user.is_superuser = is_superuser
-        if new_password:
-            selected_user.set_password(new_password)
-        selected_user.first_name = first_name
-        selected_user.last_name = last_name
-        selected_user.email = email
-        selected_user.save()
 
-        return redirect('lista_usuarios')  # Redirige a la lista de usuarios después de editar
-
-    return render(request, 'editar_usuario.html', {'users': User.objects.all()})
