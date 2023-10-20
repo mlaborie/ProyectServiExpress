@@ -1,0 +1,131 @@
+
+  /* Estilos generales */
+
+  .form-container button.btn-primary {
+    border: none;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: #FFD700;
+    color: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    position: relative;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  .form-container {
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  button[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #286090;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .list-container {
+    margin-top: 20px;
+  }
+
+  .list-container h2 {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .list-container li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  /* Estilo para los elementos deshabilitados en la lista */
+  .list-container li span {
+    color: #d9534f;
+  }
+
+  /* Estilo para los superusuarios en la lista */
+  .list-container li strong {
+    color: #f0ad4e;
+  }
+
+  /* Estilo para la última conexión en la lista */
+  .list-container li em {
+    font-size: 14px;
+    color: #999;
+  }
+
+  /* Estilos para el botón cuadrado */
+  .square-button {
+    display: inline-block;
+    width: 20px; /* Ancho del botón */
+    height: 20px; /* Alto del botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px; /* Tamaño de fuente del texto */
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .square-button-container {
+    display: flex;
+    align-items: center;
+  }
+

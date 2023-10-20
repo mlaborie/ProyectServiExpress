@@ -1,0 +1,35 @@
+{% extends 'Modulos.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Reserva</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/ModuloReserva/FormularioReserva.css' %}">
+    <link rel="icon" type="image/x-icon" href="../static/imgs/logo.png">
+</head>
+<body>
+    <h1>Buscar Reserva</h1>
+    <form method="GET" action="{% url 'BuscarReserva' %}">
+        <input type="text" name="q" placeholder="Buscar por nombre o apellido del cliente" value="{{ query }}">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <h2>Resultados de la búsqueda</h2>
+    <ul>
+        {% for reserva in reservas %}
+            <li>
+                <a href="{% url 'BuscarReserva' reserva.id %}">
+                    {{ reserva.cliente.nombre }} {{ reserva.cliente.apellido }} - {{ reserva.fecha }} {{ reserva.hora }}
+                </a>
+            </li>
+        {% empty %}
+            <li>No se encontraron reservas</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock %}
