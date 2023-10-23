@@ -3,7 +3,8 @@ from ServiExpress.models import *
 from .forms import ReservaForm, LoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import Http404
-
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 
@@ -31,8 +32,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                # Redirige al usuario después del inicio de sesión exitoso
-                return redirect('inicio')  # 'inicio' es el nombre de la URL a la que deseas redirigir
+                return redirect('http://127.0.0.1:8000/')  # 'inicio' es el nombre de la URL a la que deseas redirigir
             else:
                 # Mostrar un mensaje de error al usuario
                 return render(request, 'login.html', {'form': form, 'error_message': 'Credenciales inválidas'})
@@ -68,14 +68,10 @@ def FormularioReserva(request):
 
 
 
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import user_passes_test
+
 
 def is_superuser(user):
     return user.is_superuser
-
 
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
@@ -132,7 +128,6 @@ def editar_usuario(request):
     else:
         users = User.objects.all()
         return render(request, 'administrar_usuarios.html', {'users': users})
-
 
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
