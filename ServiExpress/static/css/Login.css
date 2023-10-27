@@ -8,10 +8,7 @@ body {
     margin: 0;
 }
 
-.contenedor-fcm {
-    min-height: 100vh;
-    background: url("../imgs/Wallpaper.jpg") no-repeat right center/cover;
-}
+
 
 .interior-fcm {
     position: absolute;
