@@ -36,18 +36,35 @@
                                 <a class="nav-link" href="http://127.0.0.1:8000/"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Home</a>
 
 
-    <!-- Modulos-->        
-                                <div class="sb-sidenav-menu-heading">Modulos</div>
+    <!-- Modulos-->
+
+    <div class="sb-sidenav-menu-heading">Modulos</div>
+
+            <!-- Modulo Gestion Proveedores-->                         
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProveedores" aria-expanded="false" aria-controls="collapseProveedores">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Gestion Proveedores <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+            <div class="collapse" id="collapseProveedores" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="../FormularioReserva">Agregar Proveedor</a>
+                    <a class="nav-link" href="../BuscarReserva">Modificar Proveedor </a>
+                    <a class="nav-link" href="">I love Soraka</a>
+                </nav>
+            </div>
+
         <!-- Modulo Reserva-->                         
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsuarios" aria-expanded="false" aria-controls="collapseUsuarios">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReserva" aria-expanded="false" aria-controls="collapseReserva">
                                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Reserva <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
-                                <div class="collapse" id="collapseUsuarios" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <div class="collapse" id="collapseReserva" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="../FormularioReserva">Agendar Reserva</a>
-                                        <a class="nav-link" href="../BuscarReserva">Buscar Reserva </a>
+                                        <a class="nav-link" href="../FormularioReserva">Agendar Hora</a>
+                                        <a class="nav-link" href="../BuscarReserva">Buscar Agendamiento </a>
                                         <a class="nav-link" href="">uwu</a>
                                     </nav>
                                 </div>
+
+
+
+
 
         <!-- Cambiar-->                            
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCronograma" aria-expanded="false" aria-controls="collapseCronograma">

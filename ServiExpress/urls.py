@@ -19,6 +19,10 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),  # URL para la vista de cierre de sesión
     
 
+        path('crear_proveedor/', views.crear_proveedor, name='crear_proveedor'),
+
+
+
 
     #uwu
     path('administrar-usuarios/', views.administrar_usuarios, name='administrar_usuarios'),

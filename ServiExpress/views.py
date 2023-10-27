@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from ServiExpress.models import *
-from .forms import ReservaForm, LoginForm
+from .forms import ReservaForm, LoginForm, ProveedorForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import Http404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
-
 
 
 def modulos_view(request):
@@ -19,6 +18,74 @@ def ReservaExitosa(request):
 
 def BuscarReserva(request):
     return render(request, 'ModuloReserva/BuscarReserva.html')
+
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from .forms import ProveedorForm
+
+def crear_proveedor(request):
+    if request.method == 'POST':
+        form = ProveedorForm(request.POST)
+        if form.is_valid():
+            form.save()  # Guarda el proveedor en la base de datos
+            messages.success(request, 'Proveedor creado con éxito.')  # Agrega un mensaje de éxito
+            return redirect('../crear_proveedor')  # Redirige a la página principal o donde desees
+    else:
+        form = ProveedorForm()
+
+    return render(request, 'ModuloGestionProveedores/crear_proveedor.html', {'form': form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def Login(request):
     return render(request, 'Login.html')
