@@ -42,10 +42,13 @@ class Producto(models.Model):
 
 class Proveedor(models.Model):
     id_proveedor = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
+    razonSocial = models.CharField(max_length=50)
+    rut = models.CharField(max_length=50)
+    rubro = models.CharField(max_length=50)
     contacto = models.CharField(max_length=50)
-    rubro = models.CharField(max_length=20)
-
+    telefono = models.CharField(max_length=50)
+    correo = models.CharField(max_length=50)
+    
 class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)

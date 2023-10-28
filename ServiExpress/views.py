@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from ServiExpress.models import *
 from .forms import ReservaForm, LoginForm, ProveedorForm
 from django.contrib.auth import authenticate, login, logout
-from django.http import Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
+
 
 
 def modulos_view(request):
@@ -19,9 +21,6 @@ def ReservaExitosa(request):
 def BuscarReserva(request):
     return render(request, 'ModuloReserva/BuscarReserva.html')
 
-from django.contrib import messages
-from django.shortcuts import render, redirect
-from .forms import ProveedorForm
 
 def crear_proveedor(request):
     if request.method == 'POST':
@@ -36,15 +35,20 @@ def crear_proveedor(request):
     return render(request, 'ModuloGestionProveedores/crear_proveedor.html', {'form': form})
 
 
+def lista_proveedores(request):
+    proveedores = Proveedor.objects.all()
+    return render(request, 'ModuloGestionProveedores/lista_proveedores.html', {'proveedores': proveedores})
 
-
-
-
-
-
-
-
-
+def editar_proveedor(request, proveedor_id):
+    proveedor = Proveedor.objects.get(pk=proveedor_id)
+    if request.method == 'POST':
+        form = ProveedorForm(request.POST, instance=proveedor)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_proveedores')
+    else:
+        form = ProveedorForm(instance=proveedor)
+    return render(request, 'ModuloGestionProveedores/editar_proveedor.html', {'form': form, 'proveedor': proveedor})
 
 
 
