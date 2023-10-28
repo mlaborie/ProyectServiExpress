@@ -48,9 +48,6 @@ def logout_view(request):
 # Otras vistas relacionadas con tus modelos pueden ir aquí.
 
 
-
-
-
 def FormularioReserva(request):
     if request.method == 'POST':
         form = ReservaForm(request.POST)
@@ -64,7 +61,17 @@ def FormularioReserva(request):
 
     return render(request, 'ModuloReserva/FormularioReserva.html', {'servicios': servicios, 'form': form})
 
-
+def GestionBoletas(request):
+    if request.method == 'POST':
+        form = GestionBoletas(request.POST)
+        if form.is_valid():
+            boleta = form.save()
+            return redirect('gestion_boletas')
+        else:
+            form = GestionBoletas()
+    
+    boleta = GestionBoletas.all()
+    return render(request, 'gestionBoleta.html'),{'boleta':boleta}
 
 
 

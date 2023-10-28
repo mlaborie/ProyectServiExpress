@@ -24,9 +24,10 @@ urlpatterns = [
     path('administrar-usuarios/', views.administrar_usuarios, name='administrar_usuarios'),
     path('crear-usuario/', views.crear_usuario, name='crear_usuario'),
     path('deshabilitar-usuario/', views.deshabilitar_usuario, name='deshabilitar_usuario'),
-        path('habilitar-usuario/', views.habilitar_usuario, name='habilitar_usuario'),
-        path('editar-usuario/<int:user_id>/', views.editar_usuario, name='editar_usuario'),
+    path('habilitar-usuario/', views.habilitar_usuario, name='habilitar_usuario'),
+    path('editar-usuario/<int:user_id>/', views.editar_usuario, name='editar_usuario'),
 
+    path('gestionBoleta/', views.GestionBoletas, name='GestionBoletas'),
 
 
 
