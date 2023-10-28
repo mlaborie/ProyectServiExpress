@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from ServiExpress.models import *
-from .forms import  LoginForm, ProveedorForm, ReservaForm
+from .forms import  LoginForm, ProveedorForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import  Http404
 from django.contrib.auth.models import User
@@ -15,9 +15,6 @@ def modulos_view(request):
 
 def index(request):
     return render(request, 'index.html')
-
-def ReservaExitosa(request):
-    return render(request, 'ModuloReserva/ReservaExitosa.html')
 
 #Gestion De Proveedores
 
@@ -49,7 +46,6 @@ def editar_proveedor(request, proveedor_id):
     return render(request, 'ModuloGestionProveedores/editar_proveedor.html', {'form': form, 'proveedor': proveedor})
 
 #Reserva
-
 
 class CalendarView(TemplateView):
     template_name = 'ModuloReserva/calendar.html'
@@ -90,10 +86,6 @@ class CalendarView(TemplateView):
         context['months'] = months
 
         return context
-
-
-
-
 
 def guardar_reserva(request):
     if request.method == "POST":
@@ -169,6 +161,11 @@ def guardar_reserva(request):
 
 
 
+
+
+
+
+
 def Login(request):
     return render(request, 'Login.html')
 
@@ -200,56 +197,37 @@ def logout_view(request):
 
 
 
-def FormularioReserva(request):
-    if request.method == 'POST':
-        form = ReservaForm(request.POST)
-        if form.is_valid():
-            reserva = form.save()
-            return redirect('reserva_exitosa')  # Redirige a la página de éxito utilizando el nombre de la URL
-    else:
-        form = ReservaForm()
-
-    servicios = Servicio.objects.all()
-
-    return render(request, 'ModuloReserva/FormularioReserva.html', {'servicios': servicios, 'form': form})
-
-
-
-
-
-
-
 def is_superuser(user):
     return user.is_superuser
 
-@login_required
-@user_passes_test(is_superuser, login_url='no_permisos')
+#@login_required
+#@user_passes_test(is_superuser, login_url='no_permisos')
 def administrar_usuarios(request):
     users = User.objects.all()
     return render(request, 'administrar_usuarios.html', {'users': users})
 
-@login_required
-@user_passes_test(is_superuser, login_url='no_permisos')
+#@login_required
+#@user_passes_test(is_superuser, login_url='no_permisos')
 def crear_usuario(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         is_superuser = 'is_superuser' in request.POST
-        first_name = request.POST.get('first_name')  # Obtener el valor del campo de nombre
-        last_name = request.POST.get('last_name')  # Obtener el valor del campo de apellido
+        first_name = request.POST.get('first_name') 
+        last_name = request.POST.get('last_name')  
         email = request.POST.get('email')
 
         user = User.objects.create_user(username=username, password=password)
         user.is_superuser = is_superuser
-        user.first_name = first_name  # Asignar el nombre
-        user.last_name = last_name  # Asignar el apellido
+        user.first_name = first_name  
+        user.last_name = last_name  
         user.email = email
         user.save()
         return redirect('administrar_usuarios')
     return render(request, 'administrar_usuarios.html')
 
-@login_required
-@user_passes_test(is_superuser, login_url='no_permisos')
+#@login_required
+#@user_passes_test(is_superuser, login_url='no_permisos')
 def editar_usuario(request):
     if request.method == 'POST':
         user_id = request.POST.get('user')
@@ -278,8 +256,8 @@ def editar_usuario(request):
         users = User.objects.all()
         return render(request, 'administrar_usuarios.html', {'users': users})
 
-@login_required
-@user_passes_test(is_superuser, login_url='no_permisos')
+#@login_required
+#@user_passes_test(is_superuser, login_url='no_permisos')
 def deshabilitar_usuario(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -291,8 +269,8 @@ def deshabilitar_usuario(request):
             pass  # El usuario no existe
     return redirect('administrar_usuarios')
 
-@login_required
-@user_passes_test(is_superuser, login_url='no_permisos')
+#@login_required
+#@user_passes_test(is_superuser, login_url='no_permisos')
 def habilitar_usuario(request):
     if request.method == 'POST':
         username = request.POST.get('username')

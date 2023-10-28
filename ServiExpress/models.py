@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, Group, Permission
+from django.utils import timezone
 
 
 class Cliente(models.Model):
@@ -36,12 +37,6 @@ class OrdenDeCompra(models.Model):
     empleado = models.IntegerField()
     comentario = models.TextField()  
 
-class Producto(models.Model):
-    id_producto = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-
 class Proveedor(models.Model):
     id_proveedor = models.AutoField(primary_key=True)
     razonSocial = models.CharField(max_length=50)
@@ -50,6 +45,13 @@ class Proveedor(models.Model):
     contacto = models.CharField(max_length=50)
     telefono = models.CharField(max_length=50)
     correo = models.CharField(max_length=50)
+
+class Producto(models.Model):
+    id_producto = models.AutoField(primary_key=True)
+    id_proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)    
     
 class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
@@ -88,9 +90,7 @@ class ReservaCliente(models.Model):
     reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from django.db import models
-from django.utils import timezone
+
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
