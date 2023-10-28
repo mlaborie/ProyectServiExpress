@@ -9,7 +9,7 @@ urlpatterns = [
 
     path('modulos/', views.modulos_view, name='modulos'),
 
-    path('FormularioReserva/', views.agendar_reserva, name='FormularioReserva'),
+    path('guardar_reserva/', views.guardar_reserva, name='guardar_reserva'),
 
     path('reservas/', views.ReservaExitosa, name='ReservaExitosa'),
 
@@ -23,8 +23,8 @@ urlpatterns = [
         path('proveedores/editar/<int:proveedor_id>/', views.editar_proveedor, name='editar_proveedor'),
 
 
-    path('BuscarReserva/', views.BuscarReserva, name='BuscarReserva'),
     path('calendar/', views.CalendarView.as_view(), name='calendar'),
+    
 
 
 

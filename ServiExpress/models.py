@@ -66,12 +66,6 @@ class Reserva(models.Model):
     hora = models.CharField(max_length=255)
     servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     total = models.DecimalField(max_digits=10, decimal_places=2)
-    correo = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=10)
-    direccion = models.CharField(max_length=100)
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    servicios = models.ManyToManyField(Servicio, related_name='reservas')
 
 
 class FacturaReserva(models.Model):

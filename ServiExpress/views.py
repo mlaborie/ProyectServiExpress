@@ -95,40 +95,44 @@ class CalendarView(TemplateView):
 
 
 
+def guardar_reserva(request):
+    if request.method == "POST":
+        # Obtener los datos del formulario
+        cliente_rut = request.POST.get("cliente")
+        fecha = request.POST.get("fecha")
+        hora = request.POST.get("hora")
+        servicio_id = request.POST.get("servicio")
 
 
+        # Buscar el cliente y servicio seleccionados
+        cliente = Cliente.objects.get(rut=cliente_rut)
+        servicio = Servicio.objects.get(id_servicio=servicio_id)
+
+        # Calcular el total (personaliza esto según tu lógica)
+        total = servicio.precio
+
+        # Crear la reserva
+        reserva = Reserva(
+            cliente=cliente,
+            fecha=fecha,
+            hora=hora,
+            servicio=servicio,
+            total=total,
+
+        )
+
+        # Guardar la reserva en la base de datos
+        reserva.save()
+
+        # Puedes agregar más lógica aquí, como redireccionar a una página de éxito
+        return redirect("../guardar_reserva")  # Ajusta "pagina_exito" según tu configuración
+
+    # Si el método de solicitud no es POST, renderiza el formulario
+    clientes = Cliente.objects.all()
+    servicios = Servicio.objects.all()
 
 
-
-
-
-
-
-def agendar_reserva(request):
-    if request.method == 'POST':
-        form = ReservaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('pagina_de_exito')
-
-    else:
-        form = ReservaForm()
-
-    return render(request, 'ModuloReserva/FormularioReserva.html', {'form': form})
-
-
-def BuscarReserva(request):
-    if request.method == 'GET':
-        rut = request.GET.get('rut')
-        try:
-            cliente = Cliente.objects.get(rut=rut)
-            reservas = Reserva.objects.filter(cliente=cliente)
-        except Cliente.DoesNotExist:
-            cliente = None
-            reservas = []
-
-    return render(request, 'ModuloReserva/BuscarReserva.html', {'reservas': []})
-
+    return render(request, 'ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
 
 
 
