@@ -1,29 +1,35 @@
 from django import forms
 from .models import *
 
-class ReservaForm(forms.ModelForm):
-    class Meta:
-        model = Reserva
-        fields = ['nombre', 'apellido', 'correo', 'telefono', 'direccion', 'servicio', 'fecha', 'hora']
-        widgets = {
-            'nombre': forms.TextInput(attrs={'placeholder': 'Nombre'}),
-            'apellido': forms.TextInput(attrs={'placeholder': 'Apellido'}),
-            'correo': forms.EmailInput(attrs={'placeholder': 'Correo electrónico'}),
-            'telefono': forms.TextInput(attrs={'placeholder': 'Teléfono'}),
-            'direccion': forms.TextInput(attrs={'placeholder': 'Dirección'}),
-            'fecha': forms.DateInput(attrs={'placeholder': 'Fecha'}),
-            'hora': forms.TimeInput(attrs={'placeholder': 'Hora'}),
-}
 
 class ProveedorForm(forms.ModelForm):
     class Meta:
         model = Proveedor
         fields = '__all__'  # Para incluir todos los campos del modelo
 
-
-
-
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50, label='Nombre de usuario')
     password = forms.CharField(widget=forms.PasswordInput, label='Contraseña')
 
+
+
+class ReservaForm(forms.ModelForm):
+    cliente = forms.ModelChoiceField(queryset=Cliente.objects.all(), to_field_name="rut")
+    servicios = forms.ModelMultipleChoiceField(queryset=Servicio.objects.all(), to_field_name="nombre")
+
+    class Meta:
+        model = Reserva
+        exclude = ['correo', 'telefono', 'direccion', 'nombre', 'apellido', 'total']
+
+    def save(self, commit=True):
+        reserva = super().save(commit=False)
+        cliente = self.cleaned_data['cliente']
+        reserva.correo = cliente.correo
+        reserva.telefono = cliente.telefono
+        reserva.direccion = cliente.direccion
+        reserva.nombre = cliente.nombre
+        reserva.apellido = cliente.apellido
+        reserva.total = sum(servicio.precio for servicio in self.cleaned_data['servicios'])
+        if commit:
+            reserva.save()
+        return reserva

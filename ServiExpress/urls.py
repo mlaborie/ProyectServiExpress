@@ -9,11 +9,9 @@ urlpatterns = [
 
     path('modulos/', views.modulos_view, name='modulos'),
 
-    path('FormularioReserva/', views.FormularioReserva, name='FormularioReserva'),
+    path('FormularioReserva/', views.agendar_reserva, name='FormularioReserva'),
 
     path('reservas/', views.ReservaExitosa, name='ReservaExitosa'),
-
-    path('BuscarReserva/', views.BuscarReserva, name='BuscarReserva'),
 
     path('Login/', views.Login, name='Login'), 
     path('login/', views.login_view, name='login'),  # URL para la vista de inicio de sesión
@@ -25,6 +23,13 @@ urlpatterns = [
         path('proveedores/editar/<int:proveedor_id>/', views.editar_proveedor, name='editar_proveedor'),
 
 
+    path('BuscarReserva/', views.BuscarReserva, name='BuscarReserva'),
+    path('calendar/', views.CalendarView.as_view(), name='calendar'),
+
+
+
+
+    
 
 
 

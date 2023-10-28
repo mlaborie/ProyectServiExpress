@@ -1,0 +1,71 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Formulario y selectores de mes y año */
+form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+select {
+    font-size: 16px;
+    padding: 5px;
+}
+
+input[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tabla de calendario */
+table {
+    width: 100%;
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Lista de reservas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Mensaje de "No hay reservas para este mes" */
+p {
+    text-align: center;
+    font-weight: bold;
+    color: #ff0000;
+    margin: 20px;
+}

@@ -1,35 +1,30 @@
 {% extends 'Modulos.html' %}
 {% block content %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Buscar Agendamiento</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/ModuloReserva/FormularioReserva.css' %}">
-    <link rel="icon" type="image/x-icon" href="../static/imgs/logo.png">
-</head>
-<body>
-    <h1>Buscar Reserva</h1>
-    <form method="GET" action="{% url 'BuscarReserva' %}">
-        <input type="text" name="q" placeholder="Buscar por nombre o apellido del cliente" value="{{ query }}">
-        <input type="submit" value="Buscar">
+    <!-- Otras partes de tu HTML... -->
+
+    <h2 class="title">Buscar Cliente</h2>
+    <form class="search-form" method="GET" action="{% url 'BuscarReserva' %}">
+        <div class="form-group">
+            <label for="rut">Rut</label>
+            <input type="text" class="form-control" id="rut" name="rut" placeholder="" pattern="\d{7,8}-[\d|kK]{1}" title="Ingresa un rut válido (ejemplo: 20204996-6)">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
     </form>
 
-    <h2>Resultados de la búsqueda</h2>
-    <ul>
-        {% for reserva in reservas %}
-            <li>
-                <a href="{% url 'BuscarReserva' reserva.id %}">
-                    {{ reserva.cliente.nombre }} {{ reserva.cliente.apellido }} - {{ reserva.fecha }} {{ reserva.hora }}
-                </a>
-            </li>
-        {% empty %}
-            <li>No se encontraron reservas</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+    {% if cliente %}
+        <h3 class="subtitle">Información del Cliente</h3>
+        <p>Rut: {{ cliente.rut }}</p>
+        <p>Nombre: {{ cliente.nombre }}</p>
+        <p>Apellido: {{ cliente.apellido }}</p>
+        <!-- Otros campos del cliente... -->
+
+        <h3 class="subtitle">Reservas del Cliente</h3>
+        <ul>
+            {% for reserva in reservas %}
+                <li>{{ reserva.fecha }} - {{ reserva.servicio.nombre }} - {{ reserva.total }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Otras partes de tu HTML... -->
 {% endblock %}

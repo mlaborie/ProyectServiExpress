@@ -1,0 +1,70 @@
+{% extends 'Modulos.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendario de Reservas</title>
+            <!-- CSS -->
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{% static 'css/ModuloReserva/calendar.css' %}">
+            <link rel="icon" type="image/x-icon" href="../static/imgs/ServiExpress.png">
+
+</head>
+<body>
+    <h1>Calendario de Reservas - {{ month }} {{ year }}</h1>
+
+    <!-- Formulario para seleccionar el mes y el año -->
+    <form method="get" action="">
+        <label for="year">Año:</label>
+        <select id="year" name="year">
+            {% for y in years %}
+                <option value="{{ y }}" {% if y == year %}selected{% endif %}>{{ y }}</option>
+            {% endfor %}
+        </select>
+        <label for="month">Mes:</label>
+        <select id="month" name="month">
+            {% for m in months %}
+                <option value="{{ m.0 }}" {% if m.0 == month %}selected{% endif %}>{{ m.1 }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Cambiar">
+    </form>
+
+    {% if calendar_data %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Reservas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for day, reservations in calendar_data.items %}
+                    <tr>
+                        <td>{{ day }}</td>
+                        <td>
+                            <ul>
+                                {% for reserva in reservations %}
+                                    <li>
+                                        {{ reserva.fecha }} - {{ reserva.cliente }}
+                                        <br>
+                                        Servicio: {{ reserva.servicio_nombre }}
+                                        <br>
+                                        Descripción del Servicio: {{ reserva.servicio_descripcion }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay reservas para este mes.</p>
+    {% endif %}
+</body>
+</html>
+{% endblock %}
+

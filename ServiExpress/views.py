@@ -1,12 +1,13 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from ServiExpress.models import *
-from .forms import ReservaForm, LoginForm, ProveedorForm
+from .forms import  LoginForm, ProveedorForm, ReservaForm
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import  Http404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
-
+from django.views.generic import TemplateView
+import datetime
 
 
 def modulos_view(request):
@@ -18,9 +19,7 @@ def index(request):
 def ReservaExitosa(request):
     return render(request, 'ModuloReserva/ReservaExitosa.html')
 
-def BuscarReserva(request):
-    return render(request, 'ModuloReserva/BuscarReserva.html')
-
+#Gestion De Proveedores
 
 def crear_proveedor(request):
     if request.method == 'POST':
@@ -33,7 +32,6 @@ def crear_proveedor(request):
         form = ProveedorForm()
 
     return render(request, 'ModuloGestionProveedores/crear_proveedor.html', {'form': form})
-
 
 def lista_proveedores(request):
     proveedores = Proveedor.objects.all()
@@ -50,10 +48,86 @@ def editar_proveedor(request, proveedor_id):
         form = ProveedorForm(instance=proveedor)
     return render(request, 'ModuloGestionProveedores/editar_proveedor.html', {'form': form, 'proveedor': proveedor})
 
+#Reserva
+
+
+class CalendarView(TemplateView):
+    template_name = 'ModuloReserva/calendar.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        today = datetime.date.today()
+        year = int(self.request.GET.get('year', today.year))
+        month = int(self.request.GET.get('month', today.month))
+
+        # Lista de años para el campo desplegable
+        years = range(today.year - 5, today.year + 5)
+
+        # Lista de tuplas (número de mes, nombre de mes) para el campo desplegable
+        months = [(i, datetime.date(2000, i, 1).strftime('%B')) for i in range(1, 13)]
+
+        reservations = Reserva.objects.filter(fecha__year=year, fecha__month=month)
+
+        calendar_data = {}
+        for reserva in reservations:
+            day = reserva.fecha.day
+            if day not in calendar_data:
+                calendar_data[day] = []
+            # Obtén el servicio asociado a la reserva
+            servicio = reserva.servicio
+            calendar_data[day].append({
+                'fecha': reserva.fecha,
+                'cliente': reserva.cliente.nombre,
+                'servicio_nombre': servicio.nombre,
+                'servicio_descripcion': servicio.descripcion,
+            })
+
+        context['calendar_data'] = calendar_data
+        context['month'] = datetime.date(year, month, 1).strftime('%B')
+        context['year'] = year
+        context['years'] = years
+        context['months'] = months
+
+        return context
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+def agendar_reserva(request):
+    if request.method == 'POST':
+        form = ReservaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pagina_de_exito')
+
+    else:
+        form = ReservaForm()
+
+    return render(request, 'ModuloReserva/FormularioReserva.html', {'form': form})
+
+
+def BuscarReserva(request):
+    if request.method == 'GET':
+        rut = request.GET.get('rut')
+        try:
+            cliente = Cliente.objects.get(rut=rut)
+            reservas = Reserva.objects.filter(cliente=cliente)
+        except Cliente.DoesNotExist:
+            cliente = None
+            reservas = []
+
+    return render(request, 'ModuloReserva/BuscarReserva.html', {'reservas': []})
 
 
 

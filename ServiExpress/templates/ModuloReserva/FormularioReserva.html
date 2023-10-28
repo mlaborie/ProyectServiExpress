@@ -1,88 +1,14 @@
-{% extends 'Modulos.html' %}
-{% block content %}
-{% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Agendamiento</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/ModuloReserva/FormularioReserva.css' %}">
-    <link rel="icon" type="image/x-icon" href="../static/imgs/logo.png">
-
+    <title>Formulario de Reserva</title>
 </head>
 <body>
-
-    <form action="/reservas/" method="post">
+    <h1>Formulario de Reserva</h1>
+    <form method="post">
         {% csrf_token %}
-
-        <h1>Agendamiento</h1>
-
-        <div class="datos-cliente">
-            <h2>Datos del cliente</h2>
-            <input type="text" name="nombre" placeholder="Nombre">
-            <input type="text" name="apellido" placeholder="Apellido">
-            <input type="email" name="correo" placeholder="Correo electrónico">
-            <input type="tel" name="telefono" placeholder="Teléfono">
-            <input type="text" name="direccion" placeholder="Dirección">
-        </div>
-
-        <div class="datos-servicio">
-            <h2>Datos del servicio</h2>
-            <select id="id_servicio" name="servicio">
-                <option value="" selected>Selecciona un servicio</option>
-                {% for servicio in servicios %}
-                <option value="{{ servicio.id }}" data-descripcion="{{ servicio.descripcion }}" data-precio="{{ servicio.precio }}">{{ servicio.nombre }}</option>
-                {% endfor %}
-            </select>
-
-
-            <!-- Campo para mostrar la descripción -->
-            <div id="descripcion_precio">
-                <p>Descripción: </p>
-            <!-- Campo para mostrar el precio en CLP -->
-
-                <p>CLP: </p>
-            </div>
-            <!-- Campo para mostrar el precio en dólares -->
-            <p>USD: <span id="precio_dolares"></span></p>
-        </div>
-
-        <div class="botones">
-            <input type="submit" value="Reservar">
-            <input type="reset" value="Cancelar">
-        </div>
-
+        {{ form.as_p }}
+        <input type="submit" value="Guardar Reserva">
     </form>
-
-    <!-- Script JavaScript para mostrar descripción, precio y conversión a dólares -->
-    <script>
-        document.getElementById('id_servicio').addEventListener('change', function() {
-            var selectedOption = this.options[this.selectedIndex];
-            var descripcion = selectedOption.getAttribute('data-descripcion');
-            var precioCLP = selectedOption.getAttribute('data-precio');
-            
-            // Actualizar el campo de descripción y precio en CLP
-            document.getElementById('descripcion_precio').innerHTML = `
-                <p>Descripción: ${descripcion}</p>
-                <p>CLP: $${precioCLP} </p>
-            `;
-
-            // Obtener el valor del dólar en tiempo real (esto es un ejemplo, necesitas tu propia API de conversión)
-            fetch('https://open.er-api.com/v6/latest/USD')
-                .then(response => response.json())
-                .then(data => {
-                    var usdToCLP = data.rates.CLP;
-                    var precioUSD = precioCLP / usdToCLP;
-
-                    // Actualizar el campo de precio en dólares
-                    document.getElementById('precio_dolares').textContent = `$${precioUSD.toFixed(2)} `;
-                });
-        });
-    </script>
-
 </body>
 </html>
-{% endblock %}
-

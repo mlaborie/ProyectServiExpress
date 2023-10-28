@@ -3,12 +3,14 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 
 
 class Cliente(models.Model):
-    id_cliente = models.AutoField(primary_key=True)
+    rut = models.CharField(max_length=50,primary_key=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     correo = models.CharField(max_length=50)
     telefono = models.CharField(max_length=10)
     direccion = models.CharField(max_length=100)
+    def __str__(self):
+        return f"{self.rut} {self.nombre} {self.apellido}"
 
 class Empleado(models.Model):
     id_empleado = models.AutoField(primary_key=True)
@@ -32,7 +34,7 @@ class OrdenDeCompra(models.Model):
     cantidad = models.IntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     empleado = models.IntegerField()
-    comentario = models.TextField()  # Reemplace 'unknown' por TextField
+    comentario = models.TextField()  
 
 class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
@@ -54,6 +56,8 @@ class Servicio(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
+    def __str__(self):
+        return f"{self.nombre} {self.precio} "
 
 class Reserva(models.Model):
     id_reserva = models.AutoField(primary_key=True)
@@ -61,14 +65,14 @@ class Reserva(models.Model):
     fecha = models.DateField()
     hora = models.CharField(max_length=255)
     servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-
-    # Nuevos campos
+    total = models.DecimalField(max_digits=10, decimal_places=2)
     correo = models.CharField(max_length=50)
     telefono = models.CharField(max_length=10)
     direccion = models.CharField(max_length=100)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
+    servicios = models.ManyToManyField(Servicio, related_name='reservas')
+
 
 class FacturaReserva(models.Model):
     factura = models.ForeignKey(Factura, on_delete=models.CASCADE)
