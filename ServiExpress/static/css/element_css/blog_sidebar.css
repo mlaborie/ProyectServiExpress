@@ -1,0 +1,69 @@
+.blog-sidebar .sidebar-widget{
+	background: #f7f7f7;
+}
+
+.blog-sidebar .search-widget .search-form .form-group input[type='search']{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 60px;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #808080;
+	font-family: 'Poppins', sans-serif;
+	padding: 10px 20px 10px 60px;
+	transition: all 500ms ease;
+}
+.blog-sidebar .search-widget .search-form .form-group input:focus {
+    border-color: #e35712 !important;
+}
+.blog-sidebar .search-widget .search-form .form-group button{
+	position: absolute;
+	left: 28px;
+	top: 18px;
+	font-size: 18px;
+	color: #808080;
+	cursor: pointer;
+	transition: all 500ms ease;
+}
+.blog-sidebar .post-widget .post{
+	border-bottom: 1px solid #e5e5e5;
+	min-height: 104px;
+}
+.blog-sidebar .post-widget .post:last-child{
+	border-bottom: none;
+}
+.blog-sidebar .post-widget .post .post-thumb img{
+	width: 100%;
+	border-radius: 5px;
+}
+.blog-sidebar .post-widget .post:hover .post-thumb img{
+	opacity: 0.2;
+}
+.blog-sidebar .post-widget .post h5{
+	line-height: 24px;
+}
+.blog-sidebar .tags-widget .tags-list{
+	margin: 0px -5px;
+}
+.blog-sidebar .tags-widget .tags-list li a{
+	padding: 5px 14px;
+	border: 1px solid #e5e5e5;
+}
+.blog-sidebar .tags-widget .tags-list li a:hover {
+    color: #fff;
+    background: #e35712;
+    border-color: #e35712;
+}
+
+.blog-standard-content .image-box image{
+    width: 100%;
+    border-radius: 27px;
+	overflow: hidden;
+}
+.blog-standard-content .image-box img{
+    width: 100%;
+	height: 500px;
+    border-radius: 27px;
+}

@@ -1,0 +1,57 @@
+.bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-down {
+    position: absolute;
+    background: transparent;
+    padding: 0px 0px;
+    right: -17px;
+    top: 10px;
+    line-height: 10px;
+    border-right: none;
+    border-radius: 0px;
+    z-index: 1;
+}
+.bootstrap-touchspin .input-group-btn-vertical > .btn.bootstrap-touchspin-up {
+    position: absolute;
+    background: transparent;
+    padding: 0px 0px;
+    right: -18px;
+    top: 25px;
+    border-left: none;
+    margin-top: 0px;
+    border-radius: 0px;
+    z-index: 1;
+    line-height: 10px;
+}
+.bootstrap-touchspin .glyphicon-chevron-up:before {
+  content: "\f107";
+  font-size: 18px;
+  font-style: normal;
+  color: #b3b3b3;
+  font-family: 'Font Awesome 5 pro';
+  font-weight: 400;
+  transition: all 500ms ease;
+}
+.bootstrap-touchspin .glyphicon-chevron-down:before {
+  content: "\f106";
+  font-size: 18px;
+  font-style: normal;
+  color: #b3b3b3;
+  font-weight: 400;
+  font-family: 'Font Awesome 5 pro';
+  transition: all 500ms ease;
+}
+.bootstrap-touchspin .glyphicon-chevron-up:hover:before,
+.bootstrap-touchspin .glyphicon-chevron-down:hover:before{
+	color: #101010;
+}
+.bootstrap-touchspin .input-group-btn-vertical{
+  position: absolute;
+  width: 100%;
+}
+.bootstrap-touchspin .input-group-btn-vertical i{
+  top: 0px;
+  left: 7px;
+  font-size: inherit !important; 
+}
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down{
+  margin-top: 0px;
+}

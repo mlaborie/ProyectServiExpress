@@ -1,0 +1,89 @@
+.owl-nav-style-one .owl-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(-105%);
+}
+.owl-nav-style-one .owl-nav .owl-prev {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    width: 28px;
+    border: none;
+    text-align: center;
+    color: rgba(0, 0, 0, 0);
+    line-height: 25px;
+    font-size: 0px;
+    opacity: 1;
+    margin-top: 0;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-right: 1px solid #ddd;
+}
+.owl-nav-style-one .owl-nav .owl-prev:after {
+    font-family: "Flaticon";
+    content: "\f120";
+    position: absolute;
+    top: 0;
+    height: 60px;
+    line-height: 25px;
+    left: 0;
+    color: #212121;
+    font-size: 18px;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.owl-nav-style-one .owl-nav .owl-prev:hover:after {
+    left: 0;
+    margin-left: 0;
+}
+.owl-nav-style-one .owl-nav .owl-next {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    height: 60px;
+    width: 28px;
+    border: none;
+    text-align: center;
+    line-height: 60px;
+    color: rgba(0, 0, 0, 0);
+    font-size: 0px;
+    opacity: 1;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 50%;
+}
+.owl-nav-style-one .owl-nav .owl-next:after {
+    font-family: "Flaticon";
+    content: "\f121";
+    position: absolute;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+    right: 0;
+    color: #212121;
+    font-size: 18px;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 50%;
+}
+.owl-nav-style-one .owl-nav .owl-next:hover:after {
+    right: 0;
+    margin-right: 0;
+}
+.owl-nav-style-one .owl-nav .owl-prev:hover:after,
+.owl-nav-style-one .owl-nav .owl-next:hover:after {
+    opacity: 1;
+    color: var(--theme-color);
+}
+.owl-nav-style-one .owl-nav .owl-prev:hover,
+.owl-nav-style-one .owl-nav .owl-next:hover {
+    opacity: 1;
+}

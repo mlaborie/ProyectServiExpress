@@ -1,0 +1,471 @@
+.add{
+    padding: 90px 0;
+}
+.add-left-container{
+    background-size: cover;
+    width: 100%;
+    height: 288px;
+    padding-left: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.add-right-container{
+    background-size: cover;
+    width: 100%;
+    height: 288px;
+    padding-left: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.add-content h3{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #FFFFFF;
+    margin: 9px 0;
+}
+.add-content h6{
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.add-content p{
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 9px 0;
+}
+
+/* divider */
+.divider{
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+.divider-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 75px 70px;
+    border-radius: 10px;
+}
+.divider-content h4{
+    color: #FFF;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-top: 17px;
+    margin-bottom: 5px;
+}
+.divider-content p{
+    margin-bottom: 9px;
+}
+
+/* divider two */
+.divider-two-container{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.divider-two-contant {
+    width: 53%;
+    height: 100%;
+    margin-left: -35px;
+}
+.divider-two-contant p{
+    color: #FFF;
+    font-size: 16px;
+    font-family: Poppins;
+}
+.divider-two-container .contant-one{
+    position: relative;
+    background: #2B313E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+
+}
+.divider-two-container .content-two{
+    background: #E85230;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.divider-two-container .content-two a{
+    padding: 5px 30px;
+    border-radius: 100px;
+    background: #2B313E;
+    color: #FFF;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 700;
+}
+.divider-two-container .content-two a:hover{
+    color: #E85230;
+}
+.divider-two-contant span {
+    position: absolute;
+    top: 27px;
+    right: 48px;
+    color: rgba(255, 255, 255, 0.10);
+    font-size: 68px;
+    font-family: Poppins;
+    font-weight: 700;
+}
+
+/* home two wheel add */
+.wheels{
+    margin-bottom: 80px;
+}
+.wheels-add{
+    position: relative;
+    width: 100%;
+    height: 850px;
+    background: #E85230;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.wheels-add-top-img{
+    width: 100%;
+    height: 296px;
+    
+}
+.wheels-add-top-img img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.wheels-add-one{
+    position: absolute;
+    left: 0;
+    top: 44px;
+}
+.wheels-add-two{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.wheel-add-three{
+    position: absolute;
+    left: 40px;
+    bottom: 185px;
+    animation: wheelAdd 1s linear infinite alternate;
+}
+@keyframes wheelAdd{
+    0%{
+        bottom: 185px;
+    }
+    100%{
+        bottom: 165px;
+    }
+}
+.wheel-add-three-content{
+    position: relative;
+}
+.wheel-seal {
+    position: absolute;
+    top: 27px;
+    left: 37px;
+}
+.wheel-mega {
+    position: absolute;
+    top: 18px;
+    left: 80px;
+}
+.wheel-add-three-content h5 {
+    position: absolute;
+    left: 12px;
+    bottom: 62px;
+    color: #2B313E;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 29px;
+    animation: wheeText 0.5s linear infinite alternate;
+}
+@keyframes wheeText{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+.wheels-add h4{
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.wheels-add h4 span{
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+/* home two wheel add */
+
+/* home two divider */
+.home-two-divider{
+    padding: 101px 0;
+}
+/* home two divider */
+
+/* home-two-divider-2 */
+.home-two-divider-2{
+    padding-bottom: 0;
+} 
+.home-two-divider-2 .divider-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 68px 70px;
+}
+/* home-two-divider-2 */
+
+/* home-two-add */
+.home-two-add{
+    padding-bottom: 0;
+}
+/* home-two-add */
+
+/* =========================
+home three diviver
+============================*/
+.divider-three{
+    width: 100%;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.divider-three-content{
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divider-three-content .newsletter-right-container{
+    width: 100%;
+    margin-left: 80px;
+}
+.divider-three-content h2{
+    color: #FFF;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+.divider-three-content .newsletter-mail {
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: 1px solid #E9ECEF;
+    background: #FFFFFF;
+}
+.divider-three .newsletter-right-container p{
+    color: #FFFFFF;
+    text-align: right;
+}
+/* =========================
+home three diviver
+============================*/
+
+/* =========================
+home three add
+============================*/
+.add-three{
+    padding: 90px 0;
+}
+.add-three-container{
+    position: relative;
+    margin-bottom: 24px;
+}
+.add-three-content{
+    position: absolute;
+    left: 36px;
+    bottom: 48px;
+    max-width: 224px;
+}
+.add-three-content h4{
+    color: #FFF;
+    font-size: 26px;
+    font-weight: 300;
+}
+.add-three-content h4 span{
+    font-weight: 600;
+}
+.add-three-content p{
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.add-three-bottom-content{
+    position: absolute;
+    left: 60px;
+    bottom: 60px;
+    max-width: 352px;
+}
+.add-three-bottom-content h6{
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 24px;
+}
+.add-three-bottom-content h4{
+    color: #FFF;
+    font-size: 26px;
+    font-weight: 700;
+}
+.add-three-bottom-content p{
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+.add-three .latest-deals-container{
+    margin-bottom: 24px;
+}
+/* =========================
+home three add
+============================*/
+
+/* =========================
+home four add
+============================*/
+.batteries-container{
+    position: relative;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.05);
+    padding: 17px 7px 17px 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+.batteries-container .ribon {
+    line-height: 22px;
+    padding: 0 11px;
+}
+.batteries-image{
+    max-width: 70px;
+    width: 100%;
+    height: 70px;
+}
+.batteries-content h6{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.batteries-content .rating {
+    font-size: 10px;
+    color: #ffc92e;
+    margin-bottom: 0px;
+    line-height: 23px;
+}
+.batteries-content .price{
+    line-height: 20px;
+}
+.batteries-content .price span {
+    font-size: 12px;
+    line-height: 20px;
+}
+/* =========================
+home four add
+============================*/
+
+/* =========================
+home four divider
+============================*/
+.home-four-divider .divider-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.home-four-divider .divider-content h4 {
+    margin-bottom: 20px;
+}
+/* =========================
+home four divider
+============================*/
+
+/* =======================================
+responsive
+==========================================*/
+@media only screen and (max-width: 1024px){
+    .wheels-add {
+        display: none;
+    }
+    .divider-three-content {
+        height: 165px;
+        display: block;
+        margin-top: 60px;
+    }
+    .divider-three-content .newsletter-right-container {
+        margin-left: 0px;
+    }
+    .add-three-content {
+        bottom: 15px;
+    }
+    .add-three .latest-deals-container {
+        height: 188px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px){
+    .add-three-image img{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .add-three-image img{
+        width: 100%;
+    }
+    .home-four-divider .divider-container {
+        padding-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    .add-left-container {
+        padding-left: 30px;
+    }
+    .add-right-container {
+        padding-left: 30px;
+    }
+    .add-content p br{
+        display: none;
+    }
+    .divider-three-content h2 {
+        font-size: 29px;
+    }
+    .add-three-container {
+        height: 300px;
+    }
+    .add-three-image {
+        height: 100%;
+    }
+    .add-three-image img {
+        height: 100%;
+    }
+    .add-three-bottom-content {
+        left: 35px;
+        bottom: 15px;
+    }
+    .add-three .latest-deals-container {
+        height: 350px;
+    }
+}
+/* =======================================
+responsive
+==========================================*/

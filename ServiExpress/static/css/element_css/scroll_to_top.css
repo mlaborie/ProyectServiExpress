@@ -1,0 +1,77 @@
+/** Scroll To Top **/
+.scroll-to-top{
+    position: fixed;
+    right: 0px;
+    bottom: 100px;
+    transform: rotate(90deg);
+    z-index: 99;
+}
+.scroll-to-top .visible {
+    visibility: visible!important;
+    opacity: 1!important;
+}  
+.scroll-to-top .scroll-top-inner {
+    opacity: 0;
+    visibility: hidden;
+}  
+.scroll-to-top .scroll-top-inner{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: all cubic-bezier(.4,0,.2,1) .4s;
+    -o-transition: all cubic-bezier(.4,0,.2,1) .4s;
+    transition: all cubic-bezier(.4,0,.2,1) .4s;
+}  
+.scroll-to-top .scroll-bar {
+    width: 50px;
+    height: 2px;
+    margin-right: 10px;
+    position: relative;
+}
+.scroll-to-top .scroll-bar:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f4244f;
+    opacity: .3;
+}  
+.scroll-to-top .scroll-bar .bar-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: currentColor;
+}  
+.scroll-to-top .scroll-bar-text{
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 500ms ease;
+}  
+.scroll-to-top .scroll-bar-text:hover{
+    transform: scale(1.1);
+}
+
+/* responsive */
+@media only screen and (min-width: 769px) and (max-width: 991px){
+    .scroll-to-top {
+        right: -30px;
+    }
+
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    .scroll-to-top {
+        right: -30px;
+    }
+
+}
+/* responsive */

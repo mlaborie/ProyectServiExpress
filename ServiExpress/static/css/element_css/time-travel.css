@@ -1,0 +1,116 @@
+.time-travel{
+    padding-top: 100px;
+}
+.time-travel-container{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #E9ECEF;  
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    margin-bottom: 24px;
+}
+.time-travel-container:last-child{
+    margin-bottom: 0;
+}
+.time-travel-image{
+    width: 102px;
+    height: 98px;
+}
+.time-travel-container .rating {
+    margin-bottom: 0px;
+}
+.time-travel-container .product-block-one-cintent {
+    padding: 0px;
+    border-bottom: none;
+}
+.time-travel-content .launch-time {
+    margin: 0;
+    border-radius: 5px;
+    background: #F7FAFF;
+    padding: 7px 15px;
+}
+.time-travel-content .launch-time-content{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.time-travel-content .launch-time-content p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.time-travel-content .launch-time-content span{
+    font-size: 10px;
+}
+.time-travel-image-wrapper{
+    position: relative;
+    width: 100%;
+    height: 367px;
+    background: url(/assets/images/add/time-travel.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.time-travel-image-content{
+    max-width: 306px;
+    position: absolute;
+    left: 28px;
+    bottom: 68px;
+}
+.time-travel-image-content h4{
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* time travel 4 */
+.time-travel-four{
+    padding-top: 0;
+    padding-bottom: 90px;
+}
+
+.time-four-left-container{
+    height: 759px !important;
+    position: relative;
+    padding: 60px 50px !important;
+}
+.time-four-left-container .ribon {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 29px;
+    padding: 5px 15px;
+    left: 37px;
+    top: 32px;
+}
+.time-left-bar{
+    margin-top: 25px;
+}
+.time-sale{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+.time-sale p{
+    color: #2B313E;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.time-sale p span{
+    display: inline-block;
+    font-weight: 600;
+}
+/* time travel 4 */
+
+/* ======================================
+responsive
+========================================= */
+@media only screen and (max-width: 768px){
+    .time-travel-container:last-child {
+        margin-bottom: 24px;
+    }
+}
+/* ======================================
+responsive
+========================================= */

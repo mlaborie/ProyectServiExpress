@@ -1,0 +1,238 @@
+.cart-section .item-quantity {
+    position: relative;
+    display: inline-block;
+    padding: 0px 40px 0px 0px;
+    max-width: 100px;
+    height: 50px;
+    width: 100%;
+    float: left;
+    border: 1px solid #dddddd;
+    z-index: 1;
+    border-radius: 5px;
+}  
+.cart-section input.quantity-spinner {
+    line-height: 48px;
+    height: 48px;
+    width: 43px !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #141417;
+    background: transparent;
+}  
+.cart-section .table-outer {
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+}  
+.cart-section .cart-table {
+    min-width: 1170px;
+    width: 100%;
+}  
+.cart-section .cart-table thead tr th {
+    line-height: 24px;
+    min-width: 110px;
+    padding: 21px 0px 20px 0px;
+    color: #141417;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}  
+.cart-section .cart-table tbody tr{
+    border-bottom: 1px solid #e6e6e6;
+}  
+.cart-section .cart-table .cart-header{
+    background: #f7f7f7;
+}  
+.cart-section .cart-table tbody tr td.prod-column{
+    padding: 30px 0px;
+}  
+.cart-section .cart-table tbody tr .prod-column .column-box {
+    min-height: 100px;
+    position: relative;
+    padding: 30px 0px 24px 250px;
+}  
+.cart-section .cart-table tbody tr .prod-column .column-box .prod-thumb img {
+    display: block;
+    max-width: 100%;
+}  
+.cart-section .cart-table tbody tr .prod-column .column-box .prod-thumb{
+    position: absolute;
+    left: 100px;
+    top: 0px;
+    width: 110px;
+    height: 110px;
+    border: 1px solid #e5e5e5;
+}
+.cart-section .cart-table tbody tr .prod-column .column-box .title{
+    padding-left: 20px;
+}  
+.cart-section .cart-table tbody tr .prod-column .column-box .remove-btn{
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #141417;
+    font-weight: 900;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 500ms ease;
+}  
+.cart-section .cart-table tbody tr .prod-column .column-box .remove-btn:hover{
+    color: #e35712;
+}  
+.cart-section .cart-table tbody tr td.price {
+    font-size: 15px;
+    color: #141417;
+    font-weight: 500;
+    position: relative;
+    padding: 30px 0px 30px 0px;
+    font-family: 'Inter', sans-serif;
+}  
+.cart-section .cart-table tbody tr .sub-total {
+    font-size: 15px;
+    padding: 27px 0px 27px 0px;
+    font-weight: 500;
+    color: #141417;
+    font-family: 'Inter', sans-serif;
+}  
+.cart-section .cart-table tbody tr td.qty{
+    position: relative;
+}  
+.cart-section .cart-table .prod-title{
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 28px;
+    color: #141417;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}  
+.cart-section .othre-content{
+    position: relative;
+    display: block;
+    padding: 30px 0px;
+    margin-bottom: 65px;
+}  
+.cart-section .othre-content .update-btn button{
+    background: transparent;
+    transition: all 500ms ease;
+}  
+.cart-section .othre-content .coupon-box{
+    position: relative;
+    max-width: 430px;
+}
+.cart-section .othre-content .coupon-box input[type='text']{
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    height: 50px;
+    color: #808080;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 10px 50px 10px 30px;
+}  
+.cart-section .othre-content .coupon-box button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #f7f7f7;
+    border-radius: 5px;
+    color: #141417;
+    transition: all 500ms ease;
+}  
+.cart-section .othre-content .coupon-box input:focus + button,
+.cart-section .othre-content .coupon-box button:hover{
+      color: #fff;
+      background-color: #e35712;
+      border-color: #e35712;
+}  
+.cart-section .othre-content .update-btn button{
+    position: relative;
+    color: #808080 !important;
+    border: solid;
+    border-width: 1px;
+    border-color: #e5e5e5;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: all 500ms;
+}  
+.cart-section .othre-content .update-btn button:hover {
+    color: #fff !important;
+    background-color: #e35712;
+    border-color: #e35712;
+}  
+.cart-section .cart-total .total-cart-box{
+    position: relative;
+}  
+.cart-section .cart-total .total-cart-box h3{
+    margin-bottom: 23px;
+}  
+.cart-section .cart-total .total-cart-box .list{
+    border: 1px solid #e6e6e6;
+}  
+.cart-section .cart-total .total-cart-box .list li{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #141417;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.cart-section .cart-total .total-cart-box .list li:last-child{
+    border-bottom: none;
+}  
+.cart-section .cart-total .total-cart-box .list li span{
+    float: right;
+    color: #848484;
+    font-weight: 400;
+}  
+.cart-section .cart-total .total-cart-box .list li:last-child span{
+    font-weight: 700;
+    color: #172746;
+}  
+.cart-section .cart-total .total-cart-box .theme-btn{
+    display: block;
+    padding: 12px 35px;
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    background: #e35712;
+}  
+.cart-section .cart-total .total-cart-box .list li:before{
+    position: absolute;
+    content: '';
+    background: #e6e6e6;
+    width: 1px;
+    height: 100%;
+    left: 165px;
+    top: 0px;
+}
+  
