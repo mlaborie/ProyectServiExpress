@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ServiExpress',
         'USER': 'postgres',
-        'PASSWORD': 'depto406',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',  # Si la base de datos está en la misma máquina
         'PORT': '5432',       # Puerto por defecto de PostgreSQL
     }

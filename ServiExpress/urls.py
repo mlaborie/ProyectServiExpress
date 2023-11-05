@@ -51,5 +51,9 @@ urlpatterns = [
 
 
 
+
+    path('generar_orden_compra/', views.generar_orden_compra, name='generar_orden_compra'),
+
+
     
 ]

@@ -34,6 +34,7 @@ class OrdenDeCompra(models.Model):
     id_producto = models.IntegerField()
     cantidad = models.IntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2, default=0)  
     empleado = models.IntegerField()
     comentario = models.TextField()  
 
@@ -78,9 +79,11 @@ class OrdenDeCompraEmpleado(models.Model):
     orden_de_compra = models.ForeignKey(OrdenDeCompra, on_delete=models.CASCADE)
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
 
-class OrdenDeCompraProducto(models.Model):
+class ProductoOrdenCompra(models.Model):
     orden_de_compra = models.ForeignKey(OrdenDeCompra, on_delete=models.CASCADE)
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
 
 class OrdenDeCompraProveedor(models.Model):
     orden_de_compra = models.ForeignKey(OrdenDeCompra, on_delete=models.CASCADE)

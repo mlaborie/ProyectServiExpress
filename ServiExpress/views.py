@@ -284,3 +284,83 @@ def habilitar_usuario(request):
 
 
 
+
+
+
+
+# Modulo Ordenes de compra
+
+from decimal import Decimal
+from django.shortcuts import render
+from .models import Producto, OrdenDeCompra
+
+def producto_to_dict(producto):
+    return {
+        'id_producto': producto.id_producto,
+        'nombre': producto.nombre,
+        'descripcion': producto.descripcion,
+        'precio': float(producto.precio),
+        # Agrega más campos si es necesario
+    }
+
+def dict_to_producto(diccionario):
+    return Producto(
+        id_producto=diccionario['id_producto'],
+        nombre=diccionario['nombre'],
+        descripcion=diccionario['descripcion'],
+        precio=Decimal(str(diccioniario['precio'])),
+        # Reconstruye más campos si es necesario
+    )
+
+def calcular_precio_total(productos_agregados):
+    total = Decimal('0.00')
+    for producto in productos_agregados:
+        subtotal = Decimal(str(producto['subtotal']))
+        total += subtotal
+    return total
+
+def generar_orden_compra(request):
+    productos = Producto.objects.all()
+
+    # Elimina la lista de productos agregados en la sesión al cargar la página
+    if request.method == "GET":
+        request.session.pop('productos_agregados', None)
+
+    productos_agregados = request.session.get('productos_agregados', [])
+
+    if request.method == "POST":
+        producto_id = request.POST.get("id_producto")
+        cantidad = request.POST.get("cantidad")
+        precio = request.POST.get("precio")
+        comentario = request.POST.get("comentario")
+        proveedor_id = Producto.objects.get(pk=producto_id).id_proveedor_id
+
+        orden_compra = OrdenDeCompra.objects.create(
+            id_proveedor=proveedor_id,
+            id_producto=producto_id,
+            cantidad=cantidad,
+            precio=precio,
+            empleado=request.user.id,
+            comentario=comentario
+        )
+
+        producto = Producto.objects.get(pk=producto_id)
+        productos_agregados.append({
+            'producto': producto_to_dict(producto),
+            'cantidad': cantidad,
+            'precio': float(precio),
+            'subtotal': float(cantidad) * float(precio)
+        })
+
+        request.session['productos_agregados'] = productos_agregados
+
+    precio_total = calcular_precio_total(productos_agregados)
+
+    return render(request, "generar_orden_compra.html", {
+        "productos": productos,
+        "productos_agregados": productos_agregados,
+        "precio_total": precio_total
+    })
+
+    #return render(request, 'crear_orden_de_compra.html', {'proveedores': proveedores, 'productos': productos})
+
