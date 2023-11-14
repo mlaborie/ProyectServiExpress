@@ -7,21 +7,25 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 
-
-def modulos_view(request):
-    return render(request, 'Modulos.html')
-
 def index(request):
     return render(request, 'index.html')
+
+
+def home(request):
+    return render(request, 'home.html')
+
 
 def ReservaExitosa(request):
     return render(request, 'ModuloReserva/ReservaExitosa.html')
 
+
 def BuscarReserva(request):
     return render(request, 'ModuloReserva/BuscarReserva.html')
 
+
 def Login(request):
     return render(request, 'Login.html')
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -32,7 +36,8 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('http://127.0.0.1:8000/')  # 'inicio' es el nombre de la URL a la que deseas redirigir
+                # 'inicio' es el nombre de la URL a la que deseas redirigir
+                return redirect('http://127.0.0.1:8000/')
             else:
                 # Mostrar un mensaje de error al usuario
                 return render(request, 'login.html', {'form': form, 'error_message': 'Credenciales inválidas'})
@@ -40,10 +45,12 @@ def login_view(request):
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
+
 def logout_view(request):
     logout(request)
     # Redirige al usuario después del cierre de sesión
-    return redirect('login')  # 'login' es el nombre de la URL de inicio de sesión
+    # 'login' es el nombre de la URL de inicio de sesión
+    return redirect('login')
 
 # Otras vistas relacionadas con tus modelos pueden ir aquí.
 
@@ -53,13 +60,15 @@ def FormularioReserva(request):
         form = ReservaForm(request.POST)
         if form.is_valid():
             reserva = form.save()
-            return redirect('reserva_exitosa')  # Redirige a la página de éxito utilizando el nombre de la URL
+            # Redirige a la página de éxito utilizando el nombre de la URL
+            return redirect('reserva_exitosa')
     else:
         form = ReservaForm()
 
     servicios = Servicio.objects.all()
 
     return render(request, 'ModuloReserva/FormularioReserva.html', {'servicios': servicios, 'form': form})
+
 
 def GestionBoletas(request):
     if request.method == 'POST':
@@ -69,22 +78,21 @@ def GestionBoletas(request):
             return redirect('gestion_boletas')
         else:
             form = GestionBoletas()
-    
+
     boleta = GestionBoletas.all()
-    return render(request, 'gestionBoleta.html'),{'boleta':boleta}
-
-
-
+    return render(request, 'gestionBoleta.html'), {'boleta': boleta}
 
 
 def is_superuser(user):
     return user.is_superuser
+
 
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
 def administrar_usuarios(request):
     users = User.objects.all()
     return render(request, 'administrar_usuarios.html', {'users': users})
+
 
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
@@ -93,8 +101,10 @@ def crear_usuario(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         is_superuser = 'is_superuser' in request.POST
-        first_name = request.POST.get('first_name')  # Obtener el valor del campo de nombre
-        last_name = request.POST.get('last_name')  # Obtener el valor del campo de apellido
+        # Obtener el valor del campo de nombre
+        first_name = request.POST.get('first_name')
+        # Obtener el valor del campo de apellido
+        last_name = request.POST.get('last_name')
         email = request.POST.get('email')
 
         user = User.objects.create_user(username=username, password=password)
@@ -105,6 +115,7 @@ def crear_usuario(request):
         user.save()
         return redirect('administrar_usuarios')
     return render(request, 'administrar_usuarios.html')
+
 
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
@@ -136,6 +147,7 @@ def editar_usuario(request):
         users = User.objects.all()
         return render(request, 'administrar_usuarios.html', {'users': users})
 
+
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
 def deshabilitar_usuario(request):
@@ -149,6 +161,7 @@ def deshabilitar_usuario(request):
             pass  # El usuario no existe
     return redirect('administrar_usuarios')
 
+
 @login_required
 @user_passes_test(is_superuser, login_url='no_permisos')
 def habilitar_usuario(request):
@@ -161,6 +174,3 @@ def habilitar_usuario(request):
         except User.DoesNotExist:
             pass  # El usuario no existe
     return redirect('administrar_usuarios')
-
-
-
