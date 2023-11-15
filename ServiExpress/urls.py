@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index, name='index'),  # Esta ruta vacía representa la página de inicio
     # Otras rutas y vistas pueden ir aquí si es necesario
 
-    
+        path('checkout/', views.checkout, name='checkout'),
+
 ]
