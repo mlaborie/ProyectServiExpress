@@ -1,0 +1,58 @@
+.page-title{
+    width: 100%;
+    overflow: visible;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 90px 0px 175px 0px;
+    margin-top: -50px;
+} 
+.page-title .content-box h1{
+    color: #141417;
+}
+.page-title .bread-crumb li{
+    color: #808080;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}    
+.page-title .bread-crumb li a{
+    color: #808080;
+}  
+.page-title .bread-crumb li a:hover,
+.page-title .bread-crumb li.current{
+    color: #141417;
+}
+.page-title .bread-crumb li a:hover{
+    text-decoration: underline;
+    color: #141417;
+}
+.page-title .bread-crumb li:before{
+    position: absolute;
+    content: "\f105";
+    font-family: 'Font Awesome 5 Pro';
+    top: 1px;
+    right: -16px;
+}  
+.page-title .bread-crumb li:last-child:before{
+    display: none;
+}
+.page-title .pattern-layer .shape-1{
+    width: 176px;
+    height: 183px;
+    background-repeat: no-repeat;
+    -webkit-animation: zoom-fade 5s infinite linear;
+    animation: zoom-fade 5s infinite linear;
+}
+.page-title .pattern-layer .shape-2{
+    width: 221px;
+    height: 129px;
+    background-repeat: no-repeat;
+}
+.page-title .pattern-layer .shape-3{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    z-index: -1;
+}

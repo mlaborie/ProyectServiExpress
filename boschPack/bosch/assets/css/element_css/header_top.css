@@ -1,0 +1,356 @@
+/* ==============================
+Header One 
+================================*/
+.ex_shop_header .header-top {
+    background: #fff;
+    position: relative;
+    padding: 20px 0;
+    border-top: 5px solid #E85230;
+    border-bottom: 1px solid #E9ECEF;
+}
+.ex_shop_header .wrapper-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.ex_shop_header .left-column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.ex_shop_header ul.contact-info {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 30px;
+}
+.header-style-two ul.contact-info {
+    margin-right: 0px;
+}
+.ex_shop_header ul.social-icon {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.curency{
+    display: flex;
+}
+.curency .nice-select {
+    background: transparent;
+}
+.curency .language{
+    position: relative;
+}
+.ex_shop_header .right-column {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 140px;
+    align-items: center;
+}
+.help-info, .help-info a{
+    display: inline-block;
+    color: #2B313E;
+    font-size: 12px;
+    line-height: 14px;
+}
+.help-info span{
+    display: inline-block;
+    color: #9DA3AA;
+    margin: 0 3px;
+}
+.help-info span:first-child{
+    margin-right: 0;
+}
+.help-info-number{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 13px !important;
+}
+.ex_shop_header ul.contact-info li {
+    font-size: 15px;
+    line-height: 1.4em;
+    color: #141417;
+    font-weight: 400;
+    margin-right: 20px;
+}
+.header-style-two ul.contact-info li:last-child{
+    margin-right: 0;
+}
+.ex_shop_header ul.contact-info li a {
+    transition: .5s;
+    font-size: 12px;
+    line-height: 14px;
+    color: #2B313E;
+}
+.ex_shop_header ul.contact-info li i {
+    color: var(--theme-color);
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    font-size: 18px;
+}
+.ex_shop_header ul.social-icon {
+    display: flex;
+    gap: 20px;
+}
+.ex_shop_header ul.social-icon li a {
+    font-size: 14px;
+    line-height: 26px;
+    color: #b3b3b3;
+    transition: .5s;
+}
+.ex_shop_header ul.social-icon li a:hover {
+    color: var(--theme-color);
+}
+.ex_shop_header .language {
+    margin-right: 30px;
+    padding-left: 0px;
+}
+.ex_shop_header .language .flag{
+    position: absolute;
+    left: -20px;
+    top: -7px;
+    z-index: 1;
+}
+.ex_shop_header .header-top .nice-select{
+    height: auto;
+    font-size: 12px;
+    line-height: 14px;
+    color: #2B313E;
+    border: none !important;
+    padding: 0px;
+    padding-right: 10px;
+}
+.ex_shop_header .header-top .nice-select:after{
+    right: 0px;
+    color: #141417;
+}
+.ex_shop_header .language .bootstrap-select {
+    width: 80px !important;
+}
+.ex_shop_header .language button.dropdown-toggle {
+    padding: 5px;
+    background: transparent;
+    outline: none !important;
+    box-shadow: none;
+    border: 0;
+}
+.ex_shop_header .language .bootstrap-select .dropdown-toggle .filter-option:after {
+    right: 0;
+    color: #222;
+    top: 2px;
+}
+.ex_shop_header .currency .filter-option {
+    background: transparent;
+}
+.ex_shop_header .currency .bootstrap-select {
+    width: 55px !important;
+}
+.ex_shop_header .currency button.dropdown-toggle {
+    padding: 5px;
+    background: transparent;
+    outline: none !important;
+    box-shadow: none;
+    border: 0;
+}
+.ex_shop_header .currency .bootstrap-select .dropdown-toggle .filter-option:after {
+    right: 0;
+    color: #222;
+    top: 2px;
+}
+.ex_shop_header .header-phone-number {
+    position: relative;
+    font-size: 15px;
+    line-height: 21px;
+    color: var(--theme-color);
+    font-weight: 600;
+}
+.ex_shop_header .header-phone-number i {
+    margin-right: 5px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.ex_shop_header .header-phone-number a {
+    color: #ffffff;
+    transition: .5s;
+}
+/* =====================================
+Header One 
+======================================= */
+
+/* =====================================
+Header Two 
+======================================= */
+.header-top-two{
+    background: #2B313E !important;
+    border-bottom: 1px solid #464646 !important;
+    border-top: none !important;
+}
+.header-top-middle{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.header-style-two ul.contact-info li a {
+    color: #FFFFFF;
+}
+.header-top-middle p:first-child{
+    border-right: 1px solid #464646;
+    padding-right: 25px;
+}
+.header-top-middle p{
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 12px;
+}
+/* =====================================
+Header Two 
+======================================= */
+
+/* =====================================
+Header Three 
+======================================= */
+.header-style-three ul.contact-info li a {
+    color: #2B313E !important;
+}
+.header-style-three .header-top .nice-select {
+    color: #2B313E !important;
+}
+/* =====================================
+Header Three 
+======================================= */
+
+/* =====================================
+Header Four 
+======================================= */
+.header-style-four .header-top {
+    padding: 30px 0;
+    border-top: 0;
+    border-bottom: 0px;
+}
+/* =====================================
+Header Four 
+======================================= */
+
+
+/* ====================================
+resposive
+======================================= */
+@media only screen and (max-width: 1366px){
+    .auto-container {
+        max-width: 1200px !important;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .auto-container {
+        max-width: 990px !important;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    /* header one */
+    .header-top .left-column{
+        justify-content: center;
+    }
+    .ex_shop_header .wrapper-box {
+        justify-content: center;
+    }
+    .ex_shop_header ul.contact-info{
+        margin-right: 0;
+        padding-left: 0;
+        border-right: none;
+        gap: 10px;
+        justify-content: center;
+    }
+    .ex_shop_header ul.contact-info li{
+        margin-right: 0;
+    }
+    /* header one */
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px){
+    .header-style-two .wrapper-box {
+        justify-content: space-between;
+    }
+    .header-style-four .header-top .left-column {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px){
+    .header-style-one ul.contact-info {
+        display: none;
+    }
+    .header-style-one .outer-box {
+        padding: 0px 0px !important;
+    }
+
+    .header-style-two .wrapper-box {
+        justify-content: space-between;
+    }
+
+    .header-style-three .header-top .left-column {
+        display: none;
+    }
+    .header-style-three .right-column {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .header-top .left-column {
+        display: none;
+    }
+    .header-style-two .wrapper-box {
+        justify-content: space-between;
+    }
+
+    /* header two */
+    .header-style-two .wrapper-box {
+        justify-content: space-between;
+    }
+    .header-style-two .right-column {
+        display: none;
+    }
+    .header-style-two .right-column {
+        display: flex;
+    }
+
+    /* header three */
+    .header-style-three .right-column {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .header-style-three .header-upper .logo_menu {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        margin-left: -140px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    /* header one */
+    .ex_shop_header .right-column {
+        gap: 0;
+        text-align: center;
+    }
+    .curency {
+        display: none;
+    }
+    /* header one */
+
+
+}
+/* ====================================
+resposive
+======================================= */

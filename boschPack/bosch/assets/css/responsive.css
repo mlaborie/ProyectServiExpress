@@ -1,0 +1,472 @@
+
+@media only screen and (max-width: 1850px){
+
+}
+
+@media only screen and (max-width: 1700px){
+
+
+}
+
+@media only screen and (max-width: 1680px){
+
+
+
+
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1567px){
+   
+
+}
+
+@media only screen and (max-width: 1366px){
+    /* cta */
+    .cta-carousel .owl-prev {
+        left: -35px;
+    }
+    .cta-carousel .owl-next {
+        right: -35px;
+    }
+    .product-block-one {
+        width: 290px;
+    }
+    /* cta */
+
+    /* item */
+    .item-block-one {
+        width: 250px;
+    }
+    /* item */
+
+    
+
+}
+
+@media only screen and (max-width: 1200px){
+
+    
+
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px){
+    .banner-right-container {
+        margin-top: 30px;
+    }
+    section.week-sale {
+        margin-top: 30px;
+    }
+    .week-image {
+        width: 121px;
+    }
+    .item-block-one {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .featured-one .section-title h4 {
+        font-size: 18px;
+        line-height: 29px;
+    }
+    .brand .section-title {
+        margin-left: 15px;
+    }
+    .week-deal-one {
+        width: 235px;
+    }
+
+
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px){
+
+
+
+}
+
+@media only screen and (max-width: 1024px){
+    /* header one */
+    .ex_shop_header ul.contact-info {
+        margin-right: 0;
+    }
+    /* header one */
+
+    /* cta */
+    .cta-carousel .owl-nav {
+        display: none;
+    }
+    
+    /* cta */
+
+    /* banar */
+    .banner-right-container {
+        margin-top: 30px;
+    }
+    .select-shape {
+        width: 115px;
+    }
+    /* banar */
+
+    /* week sale */
+    section.week-sale {
+        padding-top: 40px;
+    }
+    .week-image {
+        width: 115px;
+    }
+    /* week sale */
+
+    /* featured */
+    .section-title {
+        gap: 5px;
+    }
+    .section-title h4 {
+        font-size: 22px !important;
+    }
+    .featured-one  .nav-link {
+        margin: 0 10px;
+    }
+    /* featured */
+
+    /* item */
+    .item-left-container{
+        margin-bottom: 30px;
+    }
+    .item-block-one {
+        width: 100%;
+    }
+    /* item */
+
+    /* brand */
+    .row .brand{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    /* brand */
+
+    /* product */
+    .off-80-contant {
+        border-radius: 40px;
+    }
+    /* product */
+
+    /* week deal */
+    .week-deal-one{
+        width: 235px;
+    }
+    /* week deal */
+
+
+
+    /* blog */
+    .blog-content {
+        gap: 10px;
+    }
+    .blog-date p{
+        font-size: 12px;
+    }
+    .blog-title a {
+        font-size: 17px;
+        line-height: 27px;
+    }
+    /* blog */
+
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px){
+    .section-title h4 {
+        font-size: 16px !important;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px){
+
+
+
+}
+
+@media only screen and (max-width: 768px){
+
+     /* week sale */
+     .week-image {
+        width: 95px;
+    }
+     /* week sale */
+
+     /* featured */
+     .featured-one-container {
+        display: block;
+        position: relative;
+    }
+    .featured-three .common-more-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .wheels{
+        padding-top: 30px;
+    }
+    .wheels .common-more-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .featured-one .common-more-btn{
+        display: none;
+    }
+    .product-block-one {
+        width: 100%;
+    }
+     /* featured */
+
+     /* add */
+     .add-left-container{
+        margin-bottom: 30px;
+     }
+     /* add */
+
+     /* item */
+     .item-left-container h4{
+        text-align: center;
+     }
+     .item-left-image {
+        text-align: center;
+    }
+    .product-block-one-cintent h4 a {
+        font-size: 20px;
+        line-height: 32px;
+    }
+     /* item */
+
+     /* product */
+     .product {
+        padding-bottom: 0;
+    }
+     .product-container {
+        margin-bottom: 50px;
+    }
+     /* product */
+
+     /* brand */
+     .brand .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+     /* brand */
+
+     /* week deal */
+     .common-section-title {
+        align-items: baseline !important;
+    }
+     .common-section-title-left {
+        display: block !important;
+    }
+    .timer {
+        margin-top: 20px;
+    }
+     /* week deal */
+
+     /* divider-two */
+     .divider-two .row{
+        margin-left: 0;
+        margin-right: 0;
+     }
+     .divider-two-contant {
+        display: block !important;
+        margin-left: -22px;
+    }
+    .divider-two-contant p,.divider-two-contant a{
+        margin-left: 40px;
+    }
+    .divider-two-contant p{
+        margin-bottom: 10px;
+    }
+     /* divider-two */
+
+     /* blog */
+     .blog {
+        margin-bottom: 20px;
+    }
+     .blog-container {
+        margin-bottom: 50px;
+    }
+     /* blog */
+
+
+
+
+}
+
+@media only screen and (min-width: 741px) and (max-width: 767px){
+
+
+
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    /* banner */
+    .banner-content {
+        padding: 50px 30px;
+    }
+    .banner-content h2 {
+        font-size: 38px;
+        line-height: 47px;
+    }
+    .banner-three .banner-content h2 {
+        font-size: 32px;
+        line-height: 47px;
+    }
+    .banner-left-container {
+        height: 350px;
+    }
+    /* banner */
+
+    /* week sale */
+    .week-sale-container{
+        margin-bottom: 30px;
+    }
+    .week-image {
+        width: 123px;
+    }
+    .common-more-btn {
+        display: none;
+    }
+    /* week sale */
+
+    /* add */
+   
+    /* add */
+
+    /* item */
+    .item-left-container {
+        height: 765px;
+    }
+    .item-left-container h4 {
+        text-align: left;
+        font-size: 22px;
+    }
+    .item-4 .item-left-container h4 {
+        text-align: center;
+        font-size: 18px;
+    }
+    /* item */
+
+    /* divider */
+    .divider-container {
+        padding: 50px 20px;
+    }
+    .divider-content h4 {
+        font-size: 23px;
+        line-height: 33px;
+    }
+    .home-four-divider .divider-content h4 {
+        font-size: 16px;
+        line-height: 29px;
+    }
+    /* divider */
+
+    /* week deal */
+    .common-section-title-left {
+        width: 100%;
+    }
+    .timer {
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+    .week-deal .common-more-btn {
+        display: none;
+    }
+    .timer {
+        text-align: center;
+    }
+    .timer-count {
+        justify-content: center;
+    }
+    /* week deal */
+
+    /* divider two */
+    .divider-two-container {
+        display: block;
+    }
+    .divider-two-container .contant-one {
+        width: 100%;
+        margin-left: 0;
+        clip-path: none;
+    }
+    .divider-two-container .content-two {
+        width: 100%;
+        margin-left: 0;
+    }
+    .divider-two-contant p, .divider-two-contant a {
+        margin-left: 5px;
+    }
+    /* divider two */
+
+    /* blog */
+    .blog .common-section-title {
+        align-items: center !important;
+    }
+    .blog .common-section-title-left {
+        width: 65%;
+    }
+    .blog .section-title {
+        gap: 0 !important;
+    }
+    .blog .common-section-title-left p{
+        display: none;
+    }
+    .blog-image img{
+        width: 100%;
+    }
+    /* blog */
+
+    /* ===========================
+    home 2
+    =============================*/
+    /* weel */
+    .wheels .nav {
+        display: block;
+    }
+    .wheels .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        display: inline-block;
+    }
+    .wheels .nav-tabs .nav-link{
+        padding-bottom: 10px;
+    }
+    /* weel */
+
+    /* latest deal */
+    .latest-deals-container {
+        height: 340px;
+        display: block;
+        text-align: center;
+    }
+    .latest-deals-content {
+        width: 67%;
+        margin: 0 auto;
+    }
+    /* latest deal */
+
+    /* home two divider */
+    .home-two-divider-2 .divider-container {
+        padding: 68px 20px;
+    }
+    /* home two divider */
+    /* ===========================
+    home 2
+    =============================*/
+
+    
+
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 359px){
+
+
+
+
+}

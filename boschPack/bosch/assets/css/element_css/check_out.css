@@ -1,0 +1,136 @@
+/** checkout-section **/
+.checkout-section .coupon-box{
+    border: 1px solid #e5e5e5;
+}  
+.checkout-section .coupon-box a:hover{
+    text-decoration: underline;
+}  
+.checkout-section .upper-box .single-box:last-child{
+    margin-bottom: 0px;
+}  
+.checkout-section .customer a:hover,
+.checkout-section .coupon a:hover{
+    text-decoration: underline;
+}  
+.checkout-section .billing-form .form-group{
+    margin-bottom: 23px;
+}  
+.checkout-section .billing-form .form-group:last-child{
+    margin-bottom: 0px;
+}  
+.checkout-section .billing-form .form-group input[type='text'],
+.checkout-section .billing-form .form-group input[type='email']{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #848484;
+    padding: 10px 15px;
+    transition: all 500ms ease;
+}  
+.checkout-section .billing-form .form-group input:focus{
+    border-color: #e35712;
+}  
+.checkout-section .billing-form .form-group .nice-select{
+    border-radius: 0px;
+    border: 1px solid #e6e6e6 !important;
+    width: 100%;
+    font-size: 15px;
+    color: #848484;
+    height: 45px;
+    line-height: 45px;
+    font-weight: 400;
+    padding: 0px 20px;
+}  
+.checkout-section .billing-form .form-group .nice-select .list{
+    width: 100%;
+}  
+.checkout-section .billing-form .form-group input.address{
+    margin-bottom: 10px;
+}  
+.checkout-section .billing-form .form-group input:focus{
+    border-color: #e35712;
+}  
+.checkout-section .billing-form .select-box .ui-state-default{
+    width: 100% !important;
+}  
+.checkout-section .billing-form .select-box .ui-selectmenu-button span.ui-icon:before{
+    color: #848484;
+}  
+.checkout-section .additional-info .note-book textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 133px;
+    border: 1px solid #e6e6e6;
+    color: #7a7b80;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #848484;
+    padding: 8px 20px;
+    resize: none;
+    transition: all 500ms ease;
+}  
+.checkout-section .additional-info .note-book textarea:focus{
+    border-color: #e35712;
+}  
+.checkout-section .order-info{
+      background: #f7f7f7;
+}  
+.checkout-section .order-info .order-list li{
+    border-bottom: 1px solid #e6e6e6;
+}  
+.checkout-section .order-info .order-list li:last-child{
+    border-bottom: none;
+}  
+.checkout-section .order-info .order-list li span.light{
+    color: #848484;
+}  
+.checkout-section .payment-info{
+    background: #f7f7f7;
+}  
+.checkout-section .payment-info .payment-inner .option-block{
+    position: relative;
+    display: block;
+    margin-bottom: 22px;
+}  
+.checkout-section .payment-info .check-box input:checked + label:before{
+    background: transparent;
+    border-color: #e5e5e5;
+}  
+.checkout-section .payment-info .check-box label:after{
+    content: '';
+    background: #141417;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    left: 5px;
+    top: 9px;
+}  
+.checkout-section .payment-info .check-box{
+    margin-bottom: 0px;
+}  
+.checkout-section .payment-info .payment-inner .btn-box .theme-btn-two{
+    padding: 16px 30px;
+}  
+.checkout-section .payment-info .payment-inner{
+    background: #fff;
+}  
+.checkout-section .payment-info .payment-inner .option-block{
+    border-bottom: 1px solid #e6e6e6;
+}  
+.checkout-section .payment-info .payment-inner .option-block:last-child{
+    border-bottom: none;
+}  
+.checkout-section .payment-info .theme-btn{
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    border-radius: 5px;
+    background: #e35712;
+}

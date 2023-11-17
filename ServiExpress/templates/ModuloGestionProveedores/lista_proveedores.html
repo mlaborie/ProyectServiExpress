@@ -1,0 +1,91 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Proveedores</title>
+    <style>
+        /* Estilo para separar filas */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f5f5f5; /* Cambia el color de fondo al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Proveedores</h1>
+
+    <!-- Campo de búsqueda -->
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Buscar proveedores...">
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Razón Social</th>
+                <th>RUT</th>
+                <th>Rubro</th>
+                <th>Contacto</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in proveedores %}
+            <tr>
+                <td>{{ proveedor.id_proveedor }}</td>
+                <td>{{ proveedor.razonSocial }}</td>
+                <td>{{ proveedor.rut }}</td>
+                <td>{{ proveedor.rubro }}</td>
+                <td>{{ proveedor.contacto }}</td>
+                <td>{{ proveedor.telefono }}</td>
+                <td>{{ proveedor.correo }}</td>
+                <td>
+                    <a href="{% url 'editar_proveedor' proveedor.id_proveedor %}" class="btn btn-primary" target="_self">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, j, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                let visible = false;  // Mantenemos un seguimiento si alguna columna coincide
+
+                for (j = 1; j < tr[i].getElementsByTagName("td").length; j++) {
+                    td = tr[i].getElementsByTagName("td")[j];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            visible = true;
+                        }
+                    }
+                }
+
+                if (visible) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

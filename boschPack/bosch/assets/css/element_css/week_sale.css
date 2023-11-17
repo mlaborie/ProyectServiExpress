@@ -1,0 +1,179 @@
+.week-sale-container{
+    position: relative;
+    background: #F7FAFF;
+    border-radius: 10px;
+    padding: 38px 30px;
+}
+.popular-sale{
+    display: inline-block;
+    background: #E85230;
+    border-radius: 49px;
+    padding: 2px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.week-sale-container h5{
+    max-width: 189px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2B313E;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.week-sale-container a{
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 24px;
+    color: #2B313E;
+}
+.week-sale-container a i{
+    margin-left: 9px;
+    margin-bottom: -4px;
+}
+.week-sale-container a:hover{
+    color: #E85230;
+}
+.week-image{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 190px;
+    height: 154px;
+}
+.week-image img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+/* week deal */
+.week-deal{
+    padding-top: 90px;
+    padding-bottom: 101px;
+}
+.new-product{
+    background: #F7FAFF;
+}
+.week-deal-three{
+    padding-bottom: 0;
+}
+.timer{
+    display:flex;
+    width: 478px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: #E85230;
+}
+.timer p{
+    color: #FFF;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+.timer-count {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.timer-count p{
+    font-size: 24px;
+    font-weight: 500;
+}
+/* week deal */
+
+/* new product */
+.new-product .product-block-one {
+    background-color: #F7FAFF;
+}
+/* new product */
+
+/* latest deal */
+.latest-deals-container{
+    border-radius: 10px;
+    border: 1px solid #E85230;
+    width: 100%;
+    height: 255px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 86px;
+}
+.latest-deals-content .price{
+    color: #2B313E;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+    margin-bottom: 5px;
+}
+.latest-deals-content .price span{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+.latest-deals-content h6{
+    color: #2B313E;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+.progress {
+    height: 8px;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+}
+.progress-bar {
+    background-color: #E85230;
+    transition: width 2s ease;
+}
+/* latest deal */
+
+/* week seal 4 */
+.week-sale-four{
+    padding: 90px 0;
+}
+/* week seal 4 */
+
+
+/* ==========================
+responsive
+=============================*/
+@media only screen and (max-width: 1366px){
+    .latest-deals-container {
+        height: 233px;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .latest-deals-container {
+        gap: 50px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px){
+    .week-sale-four .week-image {
+        width: 80px !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px){
+    .week-sale-container {
+        padding: 35px 20px;
+    }
+    .latest-deals-container {
+        margin-bottom: 20px;
+    }
+}
+/* ==========================
+responsive
+=============================*/

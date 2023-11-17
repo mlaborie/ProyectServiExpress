@@ -1,0 +1,157 @@
+
+.contact-address{
+    padding-bottom: 120px;
+}
+
+.contact-info-content{
+    padding: 50px 75px;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-info-icon {
+    width: 100px;
+    height: 100px;
+    line-height: 115px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(232, 82, 48, 0.3);
+    color: #E85230;
+    font-size: 45px;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+.contact-info-content h6 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+.flaticon-map-marker{
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.contact-info-content:hover .contact-info-icon{
+    background: #E85230;
+    color: #ffffff;
+}
+
+.contact-form{
+    padding-bottom: 120px;
+    position: relative;
+}
+
+.contact-map iframe{
+    max-width: 1049px;
+    width: 100%;
+    height: 781px;
+}
+
+.map-shape {
+    position: relative;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+}
+
+.pattern-map {
+    position: absolute;
+    right: 0px;
+    bottom: 50%;
+    transform: translateY(-14%);
+    width: 50%;
+    height: 608px;
+    background-repeat: repeat-x;
+    animation: slide 60s linear infinite;
+    -webkit-animation: slide 60s linear infinite;
+    z-index: -1;
+}
+
+@keyframes slide{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 1920px 0;
+    }
+}
+
+.contact-form-wrapper{
+    max-width: 630px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 50px 40px;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+}
+
+.contact-input{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 30px;
+    padding: 14px 20px;
+}
+
+.common-input{
+    width: 49%;
+}
+
+.address-input{
+    width: 100%;
+}
+
+.contact-form-wrapper textarea{
+    width: 100%;
+    height: 145px;
+}
+
+
+
+/* ================================
+reponsive
+================================== */
+@media only screen and (max-width: 1024px){
+    .contact-map iframe {
+        max-width: 400px;
+    }
+    .contact-form-wrapper {
+        left: 30%;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .contact-map iframe {
+        max-width: 100%;
+    }
+    .contact-form-wrapper {
+        left: 0;
+        top: 35%;
+    }
+    .common-btn {
+        padding: 15px 30px;
+    }
+
+
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    .contact-form-wrapper {
+        padding: 50px 10px;
+    }
+    .common-input {
+        width: 100%;
+    }
+
+}
+/* ================================
+reponsive
+================================== */

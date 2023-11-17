@@ -1,0 +1,121 @@
+.newsletter{
+    padding-bottom: 90px;
+}
+.newsletter-left-container{
+    display: flex;
+    gap: 26px;
+}
+.newsletter-content h6{
+    color: #E85230;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 36px;
+}
+.newsletter-content h5{
+    color: #2B313E;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 32px;
+    margin: 5px 0;
+}
+.newsletter-right-container form{
+    position: relative;
+}
+.newsletter-mail{
+    width: 100%;
+    padding: 17px 18px;
+    border-radius: 15px;
+    border: 1px solid #E9ECEF;
+}
+.newsletter-mail::placeholder{
+    color: rgba(0,0,0,0.30);
+    font-size: 12px;
+}
+.newsletter-right-container button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.newsletter-right-container p{
+    color: #8A8A8A;
+    font-size: 12px;
+    line-height: 29px;
+    position: relative;
+    margin-top: 4px;
+}
+.newsletter-right-container p span{
+    color: #E85230;
+    font-size: 12px;
+    line-height: 29px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.newspop-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.newspop-content{
+    max-width: 636px;
+    width: 588px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.newspop-content .close{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    background: #ffffff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.newspop-content .close img{
+    width: 20px;
+    height: 20px;
+}
+.newspop-wrapper{
+    text-align: center;
+    padding: 50px 55px;
+    background: #ffffff;
+}
+.newspop-wrapper h5{
+    color: #2B313E;
+    font-size: 26px;
+    font-weight: 700;
+}
+.newspop-wrapper p{
+    margin: 20px 0;
+}
+
+
+/* ========================================
+responsive
+=========================================== */
+@media only screen and (max-width: 1024px){
+    .newsletter-content h5 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .newsletter-left-container {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    .newsletter-right-container p span {
+        display: block;
+    }
+}
+/* ========================================
+responsive
+=========================================== */

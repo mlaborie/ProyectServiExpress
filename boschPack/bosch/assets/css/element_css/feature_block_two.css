@@ -1,0 +1,39 @@
+/* Features Section Two */
+.features-section-two {
+    position: relative;
+    background: #f5f8fc;
+    padding: 70px 0 40px;
+}
+.feature-block-two .inner-box {
+    position: relative;
+    background: #fff;
+    padding: 47px 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+    border: 1px solid #e5e5e5;
+    transition: all 500ms ease;
+}
+.feature-block-two:hover .inner-box{
+    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.10);
+    border-color: #fff;
+}
+.feature-block-two .icon {
+    position: relative;
+    font-size: 50px;
+    line-height: 50px;
+    transition: .5s;
+    margin-bottom: 10px;
+}
+.feature-block-two h4 a,
+.feature-block-two .icon a {
+    color: #141417;
+    transition: .5s;
+}
+.feature-block-two h4 a:hover,
+.feature-block-two .icon a:hover {
+    color: var(--theme-color);
+}
+.feature-block-two .inner-box:hover .icon {
+    color: var(--theme-color);
+}

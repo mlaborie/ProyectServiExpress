@@ -1,0 +1,131 @@
+.cta{
+    padding: 30px 0;
+    border-bottom: 1px solid #E9ECEF;
+}
+.cta-content{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.cta-image{
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+.cta-info h5{
+    font-size: 18px;
+    line-height: 21px;
+    color: #2B313E;
+}
+.cta-info h6{
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B929A;
+}
+.cta-carousel .owl-nav {
+    display: block;
+   
+}
+.cta-carousel .owl-prev, .cta-carousel .owl-next{
+    width: 25px;
+    height: 25px;
+    line-height: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background: #FFFFFF;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.1));
+    transition: 0.5s;
+}
+.cta-carousel .owl-prev span, .cta-carousel .owl-next span{
+    font-size: 10px;
+    font-weight: 400;
+}
+.cta-carousel .owl-prev:hover, .cta-carousel .owl-next:hover{
+    background: #E85230;
+    color: #FFFFFF;
+}
+.cta-carousel .owl-prev{
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cta-carousel .owl-next{
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* cta two */
+.cta-two{
+    border-bottom: none;
+}
+/* cta two */
+
+/* cta three */
+.cta-three-container{
+    width: 100%;
+    height: 231px;
+    position: relative;
+}
+.cta-three-image{
+    width: 100%;
+    height: 100%;
+}
+.cta-three-content{
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+.cta-three-content p{
+    color: #FFF;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 600;
+
+}
+.cta-three-content p span{
+    font-weight: 400;
+}
+.cta-three-content h6{
+    color: #FFF;
+    font-size: 14px;
+}
+.cta-three-content h5{
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 5.4px;
+    margin-top: 15px;
+}
+/* cta three */
+
+
+/* =========================
+responsive
+============================ */
+@media only screen and (max-width: 1024px){
+    .cta-three-container {
+        width: 100%;
+        height: 172px;
+        position: relative;
+    }
+    
+}
+
+@media only screen and (min-width: 360px) and (max-width: 740px){
+    .cta-three-container {
+        height: 188px;
+        margin-bottom: 20px;
+    }
+    .cta-three-content {
+        bottom: 16px;
+    }
+    .cta-content {
+        justify-content: center;
+    }
+}
+/* =========================
+responsive
+============================ */
