@@ -72,7 +72,7 @@
 .ex_shop_header .header-upper .search-box form {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    
 }
 .ex_shop_header .header-upper .right-info {
     position: relative;

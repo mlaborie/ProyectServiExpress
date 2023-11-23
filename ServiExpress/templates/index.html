@@ -9,9 +9,9 @@
 
 <title>ServiExpress</title>
 
-<!-- Fav Icon -->
+<!-- Fav Icon >
 <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
-<img src="{% static 'static/ima' %}" alt="Mi Imagen">
+<img src="{% static 'static/ima' %}" alt="Mi Imagen"-->
 
 <!-- Stylesheets -->
 
@@ -89,37 +89,12 @@
                 </div>
             </div>
         </div>
-        <!-- preloader end -->
-
-        <!--Search Popup two
-        <div id="newspop" class="newspop">
-            <div class="newspop-container">
-                <div class="newspop-content">
-                    <div class="close">
-                        <img src="assets/images/icons/close.png" alt="cross">
-                    </div>
-                    <div class="newspop-image">
-                        <img src="assets/images/news/news-01.jpg" alt="image">
-                    </div>
-                    <div class="newspop-wrapper">
-                        <h5>Subscribe To Our Newsletter!</h5>
-                        <p>Subscribe to the newsletter to stay up to date with the latest news and most useful</p>
-                        <div class="newsletter-right-container">
-                            <form>
-                                <input type="email" name="email" class="newsletter-mail" placeholder="Enter your mail address">
-                                <button class="theme-btn btn-style-one" type="submit">subscribe <i class="flaticon-right-arrow"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>-->
-
+       
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="index.html"><img src="assets/images/logo.png" alt="logo"></a></figure>
+                    <figure class="logo-box pull-left"><a href="index"><img src="{% static 'img/logo/icono2.png' %}" alt="logo"></a></figure>
                     <div class="close-search pull-right"><img src="assets/images/icons/close.png" alt="close"></div>
                 </div>
                 <div class="overlay-layer"></div>
@@ -140,70 +115,35 @@
 
         <!-- main header -->
         <header class="main-header ex_shop_header header-style-two">
-            <!-- Header Top -->
-            <!--div class="header-top header-top-two">
-                <div class="auto-container">
-                    <div class="wrapper-box">
-                        <div class="left-column">
-                            <ul class="contact-info">
-                                <li><a href="#0">About Us </a></li>
-                                <li><a href="#0">My account</a></li>
-                                <li><a href="#0">Order Tracking</a></li>
-                                <li><a href="#0">Wishlist</a></li>
-                            </ul>
-                        </div>
-                        <div class="header-top-middle">
-                            <p>FLASH SALE: 60% Off Car Batteries </p>
-                            <p>USE CODE : 60% Off Car Batteries </p>
-                        </div>
-                        <div class="right-column">
-                            <div class="curency">
-                                <div class="language">
-                                    <span class="flag"><img src="assets/images/icons/flag.png" alt="flag"></span>
-                                    <select class="selectpicker" name="make">
-                                        <option value="*">English</option>
-                                        <option value=".category-1">Spanish</option>
-                                        <option value=".category-3">French</option>
-                                        <option value=".category-4">Chinese</option>
-                                    </select>
-                                </div>
-                                <div class="currency">
-                                    <select class="selectpicker" name="make">
-                                        <option value="*">USD</option>
-                                        <option value=".category-1">EURO</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div-->
-
-            <!-- Header Upper -->
+                        <!-- Header Upper -->
             <div class="header-upper">
-                <div class="auto-container">
+                <!--div class="auto-container"-->
                     <div class="inner-container">
                         <!--Logo-->
                         <div class="logo_menu">
-                            <div class="logo-box">
-                                <div class="logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="logo"></a></div>
+                            <div class="logo-box" style="margin-left: 20px;">
+                                
+                                <div class="logo-box" style="margin-left: 20px;">
+                                    <a href="''"><img src="{% static 'img/logo/icono2.png' %}" alt="logo" style="height:80px; width: auto;"></a>
+                                </div>
+                                
                             </div>
                         </div>
 
                         <div class="search-box">
                             <form>
-                                <input type="search" placeholder="Search products">
-                                <button type="submit"><i class="icon-magnifing-glass"></i></button>
+                                <input type="text" placeholder="Buscar Productos"></input>
+                                <button type="submit"><i class="icon-magnifing-glass" style="align-items: center;"></i></button>
                             </form>
                         </div>
                         
-                        <ul class="right-info">
+                        <ul class="right-info" style="margin-left: 20px;">
                             <li><div class="shopping-cart"><i class="icon-heart"></i><span class="count">0</span></div></li>
                             <li class="search-toggler"><i class="icon-left-right-arrow"></i></li>
                             <li><a href="#" class="search-btn"><i class="icon-user"></i> <p>My Account <span>Hello, Sign in</span></p></a></li>
                         </ul>
                     </div>
-                </div>
+                <!--/div-->
             </div>
             <!--End Header Upper-->
 
