@@ -10,4 +10,8 @@ urlpatterns = [
         path('proveedores/', views.lista_proveedores, name='lista_proveedores'),
         path('proveedores/editar/<int:proveedor_id>/', views.editar_proveedor, name='editar_proveedor'),
         path('checkout/', views.checkout, name='checkout'),
+
+#Reserva
+    path('guardar_reserva/', views.guardar_reserva, name='guardar_reserva'),
+    path('calendar/', views.CalendarView.as_view(), name='calendar'),        
 ]
