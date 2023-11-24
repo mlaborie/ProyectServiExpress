@@ -1,0 +1,16 @@
+<!-- boleta.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Boleta de Compra
+{% endblock %}
+
+{% block content %}
+    <h1>Boleta de Compra</h1>
+    <p>Cliente: {{ boleta.cliente.nombre }}</p>
+    <p>Fecha de emisión: {{ boleta.fecha_emision }}</p>
+    <p>Total: {{ boleta.total }}</p>
+    
+    <!-- Detalles de productos u otros campos relevantes -->
+{% endblock %}
