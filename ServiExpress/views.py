@@ -10,6 +10,8 @@ def index(request):
 def checkout(request):
     return render(request, 'checkout.html') 
 
+def base(request):
+    return render(request, 'Home/base.html')
 
 #Gestion De Proveedores
 

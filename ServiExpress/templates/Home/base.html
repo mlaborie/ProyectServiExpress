@@ -1,21 +1,180 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServiExpress</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="{% static 'css/font_awesome_all.css' %}" rel="stylesheet">
+<link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+<link href="{% static 'css/hover.css' %}" rel="stylesheet">
+<link href="{% static 'css/global.css' %}" rel="stylesheet">
+<link href="{% static 'css/nice_select.css' %}" rel="stylesheet">
+<link href="{% static 'css/progresscircle.css' %}" rel="stylesheet">
+<link href="{% static 'css/jquery_ui.css' %}" rel="stylesheet">
+<link href="{% static 'css/elpath.css' %}" rel="stylesheet">
+<link href="{% static 'css/hover.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/preloader.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/time-travel.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/header_top.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/header_upper.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/header_lower.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/menu_sidebar.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/menu.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/banner.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/main_footer_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/footer_bottom_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/scroll_to_top.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<title>ServiExpress</title>
+
+<!-- Stylesheets -->
+
+
 </head>
+
+<!-- page wrapper -->
 <body>
-    <!--nav-bar con logo incluido-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="https://i.ibb.co/0jZGZJd/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            ServiExpress
-        </a>
-        <form class="form-inline my-2 my-lg-0">
-            <input type="text" placeholder="Search" class="form-control mr-sm-2">
-            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
-        </form>
-    </nav>
+    <div class="boxed_wrapper">
+
+        <!-- preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">x</div>
+                <div id="handle-preloader" class="handle-preloader home-16"  style="background-image: url('{% static 'img/banner/banner-5.jpg' %}')">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                        <div class="txt-loading">
+                            <span data-text-preloader="S" class="letters-loading">S</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="v" class="letters-loading">v</span>
+                            <span data-text-preloader="i" class="letters-loading">i</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span>
+                            <span data-text-preloader="x" class="letters-loading">x</span>
+                            <span data-text-preloader="p" class="letters-loading">p</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+       
+        
+
+        <!-- main header -->
+        <header class="navbar navbar-expand-lg" style="background-color:rgb(255, 255, 255);">
+                        <!-- Header Upper -->
+            <div class="header-upper">
+                <!--div class="auto-container"-->
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo_menu">
+                            <div class="logo-box" style="margin-left: 20px;">
+                                
+                                <div class="logo-box" style="margin-left: 20px;">
+                                    <a href=""><img src="{% static 'img/logo/icono2.png' %}" alt="logo" style="height:80px; width: auto;"></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <li>
+                            <ul></ul>
+                                <li><a href="#"><p>My Account <span>Hello, Sign in</span></p></a></li>
+                            </ul>
+                        </li>
+                    </div>
+            </div> 
+        </header>
+
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg" style="background-color: orangered;border-radius: 10px;height: 50px; width: auto; align-items: center;margin-left: 30px;margin-right: 30px;" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">Inicio</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!--end nav-bar-->
+
+    <!--crear seccion-->
+    <section>
+        <h1>Promociones del mes, carrusel</h1>
+    </section>
+    <!--end crear seccion-->
+    <section>
+        <h1></h1>
+    </section>
+
+        <footer class="main-footer-one">
+            <div class="footer-bottom-one">
+                <div class="auto-container">
+                    <div class="row m-0 align-items-center justify-content-between">
+                        <div class="copyright-text">Copyright© 2023 <span>Informatic Solution</span>. All rights reserved.</div>
+                    </div>    
+                </div>
+            </div>            
+        </footer>
+       
+        <!--Scroll to top-->
+        <div class="scroll-to-top">
+            <div class="scroll-top-inner">
+                <div class="scroll-bar">
+                    <div class="bar-inner"></div>
+                </div>
+                <div class="scroll-bar-text">Ir arriba</div>
+            </div>
+        </div>
+        <!-- Scroll to top -->
+    </div>
+
+
+
+    {% load static %}
+
+    <!-- jQuery plugins -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/scrollbar.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/time_count.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/jquery.nice_select.min.js' %}"></script>
+    <script src="{% static 'js/progresscircle.js' %}"></script>
+    <script src="{% static 'js/jquery_ui.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Main JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+    
+
 </body>
 </html>
