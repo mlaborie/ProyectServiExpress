@@ -3,6 +3,7 @@ from ServiExpress.models import *
 from .forms import  ProveedorForm
 from django.contrib import messages
 
+
 def index(request):
     # Agrega aquí la lógica que desees para tu página de inicio
     return render(request, 'index.html')  # Aquí se renderiza un archivo HTML para la página de inicio
@@ -10,6 +11,11 @@ def index(request):
 def checkout(request):
     return render(request, 'checkout.html') 
 
+def base(request):
+    return render(request, 'Home/base.html')
+
+def boleta(request):
+    return render(request, 'MenuVendendor/ModuloRegistroBoleta/boleta.html')
 
 #Gestion De Proveedores
 
