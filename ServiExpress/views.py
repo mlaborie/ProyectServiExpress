@@ -39,11 +39,11 @@ def crear_proveedor(request):
     else:
         form = ProveedorForm()
 
-    return render(request, 'ModuloGestionProveedores/crear_proveedor.html', {'form': form})
+    return render(request, 'ModulusAdministratoris/ModuloGestionProveedores/crear_proveedor.html', {'form': form})
 
 def lista_proveedores(request):
     proveedores = Proveedor.objects.all()
-    return render(request, 'ModuloGestionProveedores/lista_proveedores.html', {'proveedores': proveedores})
+    return render(request, 'ModulusAdministratoris/ModuloGestionProveedores/lista_proveedores.html', {'proveedores': proveedores})
 
 def editar_proveedor(request, proveedor_id):
     proveedor = Proveedor.objects.get(pk=proveedor_id)
@@ -54,7 +54,7 @@ def editar_proveedor(request, proveedor_id):
             return redirect('lista_proveedores')
     else:
         form = ProveedorForm(instance=proveedor)
-    return render(request, 'ModuloGestionProveedores/editar_proveedor.html', {'form': form, 'proveedor': proveedor})
+    return render(request, 'ModulusAdministratoris/ModuloGestionProveedores/editar_proveedor.html', {'form': form, 'proveedor': proveedor})
 
 #Reserva
 
@@ -120,7 +120,6 @@ def guardar_reserva(request):
         cliente = Cliente.objects.get(rut=cliente_rut)
         servicio = Servicio.objects.get(id_servicio=servicio_id)
 
-        # Calcular el total (personaliza esto según tu lógica)
         total = servicio.precio
 
         # Crear la reserva
@@ -133,7 +132,6 @@ def guardar_reserva(request):
 
         )
 
-        # Guardar la reserva en la base de datos
         reserva.save()
         
         messages.success(request, 'La reserva fue registrada correctamente.')
@@ -144,7 +142,7 @@ def guardar_reserva(request):
     servicios = Servicio.objects.all()
 
 
-    return render(request, 'ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
+    return render(request, 'ModulusAdministratoris/ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
 
 
 
@@ -159,15 +157,15 @@ def crear_servicio(request):
         if form.is_valid():
             form.save()
             messages.success(request, '¡El servicio se creó correctamente!')
-            return redirect('crear_servicio')  # Ajusta la redirección según tu configuración
+            return redirect('crear_servicio')  
     else:
         form = ServicioForm()
 
-    return render(request, 'ModuloGestionServicios/crear_servicio.html', {'form': form})
+    return render(request, 'ModulusAdministratoris/ModuloGestionServicios/crear_servicio.html', {'form': form})
 
 def lista_servicios(request):
     servicios = Servicio.objects.all()
-    return render(request, 'ModuloGestionServicios/lista_servicios.html', {'servicios': servicios})
+    return render(request, 'ModulusAdministratoris/ModuloGestionServicios/lista_servicios.html', {'servicios': servicios})
 
 def editar_servicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
@@ -176,11 +174,11 @@ def editar_servicio(request, id_servicio):
         form = ServicioForm(request.POST, instance=servicio)
         if form.is_valid():
             form.save()
-            return redirect('lista_servicios')  # Otra vez, ajusta la redirección según tu configuración
+            return redirect('lista_servicios') 
     else:
         form = ServicioForm(instance=servicio)
 
-    return render(request, 'ModuloGestionServicios/editar_servicio.html', {'form': form, 'servicio': servicio})
+    return render(request, 'ModulusAdministratoris/ModuloGestionServicios/editar_servicio.html', {'form': form, 'servicio': servicio})
 
 
 
