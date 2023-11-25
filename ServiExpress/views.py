@@ -15,7 +15,7 @@ def base(request):
     return render(request, 'Home/base.html')
 
 def boleta(request):
-    return render(request, 'boleta.html')
+    return render(request, 'MenuVendendor/ModuloRegistroBoleta/boleta.html')
 
 #Gestion De Proveedores
 

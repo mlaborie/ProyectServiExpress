@@ -11,5 +11,5 @@ urlpatterns = [
         path('proveedores/', views.lista_proveedores, name='lista_proveedores'),
         path('proveedores/editar/<int:proveedor_id>/', views.editar_proveedor, name='editar_proveedor'),
         path('checkout/', views.checkout, name='checkout'),
-        path('boleta/<int:boleta_id>/', views.boleta, name='generar_boleta'),
+        path('boleta/', views.boleta, name='boleta'),
 ]
