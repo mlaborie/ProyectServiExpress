@@ -7,6 +7,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Perfil
 
+
 class Cliente(models.Model):
     rut = models.CharField(max_length=50,primary_key=True)
     nombre = models.CharField(max_length=50)
