@@ -12,3 +12,8 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput, label='Contraseña')
 
 
+
+class ServicioForm(forms.ModelForm):
+    class Meta:
+        model = Servicio
+        fields = '__all__' 

@@ -146,3 +146,47 @@ def guardar_reserva(request):
 
     return render(request, 'ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
 
+
+
+#Servicios
+from django.shortcuts import render, redirect,get_object_or_404
+from .forms import ServicioForm
+
+
+def crear_servicio(request):
+    if request.method == 'POST':
+        form = ServicioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, '¡El servicio se creó correctamente!')
+            return redirect('crear_servicio')  # Ajusta la redirección según tu configuración
+    else:
+        form = ServicioForm()
+
+    return render(request, 'ModuloGestionServicios/crear_servicio.html', {'form': form})
+
+def lista_servicios(request):
+    servicios = Servicio.objects.all()
+    return render(request, 'ModuloGestionServicios/lista_servicios.html', {'servicios': servicios})
+
+def editar_servicio(request, id_servicio):
+    servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
+
+    if request.method == 'POST':
+        form = ServicioForm(request.POST, instance=servicio)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_servicios')  # Otra vez, ajusta la redirección según tu configuración
+    else:
+        form = ServicioForm(instance=servicio)
+
+    return render(request, 'ModuloGestionServicios/editar_servicio.html', {'form': form, 'servicio': servicio})
+
+
+
+
+
+
+
+
+

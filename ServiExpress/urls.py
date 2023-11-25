@@ -13,5 +13,14 @@ urlpatterns = [
 
 #Reserva
     path('guardar_reserva/', views.guardar_reserva, name='guardar_reserva'),
-    path('calendar/', views.CalendarView.as_view(), name='calendar'),        
+    path('calendar/', views.CalendarView.as_view(), name='calendar'),
+
+# Servicios
+    path('crear_servicio/', views.crear_servicio, name='crear_servicio'),
+    path('lista_servicios/', views.lista_servicios, name='lista_servicios'),
+    path('editar_servicio/<int:id_servicio>/', views.editar_servicio, name='editar_servicio'),
+
+
+
+
 ]
