@@ -3,12 +3,12 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='index'),  # Esta ruta vacía representa la página de inicio
+    path('', views.IndexAdministratoris, name='IndexAdministratoris'),  # Esta ruta vacía representa la página de inicio
     # Otras rutas y vistas pueden ir aquí si es necesario
 
 
-        path('base/', views.base, name='base'),
-        path('IndexAdministratoris/', views.IndexAdministratoris, name='IndexAdministratoris'),
+        #path('base/', views.base, name='base'),
+        #path('IndexAdministratoris/', views.IndexAdministratoris, name='IndexAdministratoris'),
         path('generar_orden_compra/', views.generar_orden_compra, name='generar_orden_compra'),
         path('lista_ordenes_de_compra/', views.lista_ordenes_de_compra, name='lista_ordenes_de_compra'),
         path('orden_de_compra/<int:orden_id>/pdf/', views.detalle_orden_de_compra, name='detalle_orden_de_compra_pdf'),
@@ -40,7 +40,7 @@ urlpatterns = [
 
     path('crear_cliente/', views.crear_cliente, name='crear_cliente'),
     path('crear_empleado/', views.crear_empleado, name='crear_empleado'),
-    path('crear-usuario/', views.crear_usuario, name='crear_usuario'),
+    path('crear_usuario/', views.crear_usuario, name='crear_usuario'),
     
 
 

@@ -93,8 +93,7 @@
     <!-- Barra de navegación -->
     <nav>
         <ul>
-            <li><a href="{% url 'index' %}">Inicio</a></li>
-            <li><a href="{% url 'base' %}">Base</a></li>
+
             
             <!-- Desplegable para GestionProductos -->
             <li class="dropdown">
@@ -147,18 +146,13 @@
              <li class="dropdown">
                 <a href="#" class="dropbtn">Gestion Usuarios</a>
                 <div class="dropdown-content">
-                    <a href="{% url 'crear_cliente' %}">Crear Cliente</a>
+                    <a href="{% url 'crear_cliente' %}">Registrarse</a>
                     <a href="{% url 'crear_empleado' %}">Crear empelado</a>
                     <a href="{% url 'crear_usuario' %}">Lista Administrados</a>
                 </div>
             </li>            
             
 
-
-
-
-
-        <li><a href="{% url 'checkout' %}">Checkout</a></li>
 
 
     </ul>

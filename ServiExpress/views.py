@@ -19,15 +19,15 @@ import datetime
 
 
 
-def index(request):
+def IndexAdministratoris(request):
     # Agrega aquí la lógica que desees para tu página de inicio
-    return render(request, 'index.html')  # Aquí se renderiza un archivo HTML para la página de inicio
+    return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')  # Aquí se renderiza un archivo HTML para la página de inicio
 
 def base(request):
     return render(request, 'Home/base.html')
 
-def IndexAdministratoris(request):
-    return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')
+#def IndexAdministratoris(request):
+ #   return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')
 
 
 
