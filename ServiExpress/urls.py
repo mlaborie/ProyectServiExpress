@@ -15,6 +15,8 @@ urlpatterns = [
 
 
 
+
+
 # Gestionar Proveedores
         path('crear_proveedor/', views.crear_proveedor, name='crear_proveedor'),
         path('proveedores/', views.lista_proveedores, name='lista_proveedores'),
@@ -36,7 +38,9 @@ urlpatterns = [
     path('editar-producto/<int:id_producto>/', views.editar_producto, name='editar_producto'),
 
 
-
+    path('crear_cliente/', views.crear_cliente, name='crear_cliente'),
+    path('crear_empleado/', views.crear_empleado, name='crear_empleado'),
+    path('crear-usuario/', views.crear_usuario, name='crear_usuario'),
     
 
 

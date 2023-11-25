@@ -349,3 +349,37 @@ def detalle_orden_de_compra(request, orden_id):
     p.save()
 
     return response
+
+
+# views.py
+from .forms import ClienteForm, EmpleadoForm, CustomUserCreationForm
+
+def crear_cliente(request):
+    if request.method == 'POST':
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_clientes')
+    else:
+        form = ClienteForm()
+    return render(request, 'cliente_form.html', {'form': form})
+
+def crear_empleado(request):
+    if request.method == 'POST':
+        form = EmpleadoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_empleados')
+    else:
+        form = EmpleadoForm()
+    return render(request, 'empleado_form.html', {'form': form})
+
+def crear_usuario(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_usuarios')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'user_form.html', {'form': form})

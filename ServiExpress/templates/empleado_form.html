@@ -1,0 +1,7 @@
+<!-- templates/empleado_form.html -->
+<form method="post" action="{% url 'crear_empleado' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Empleado</button>
+  </form>
+  
