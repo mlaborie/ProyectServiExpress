@@ -23,6 +23,14 @@ def index(request):
     # Agrega aquí la lógica que desees para tu página de inicio
     return render(request, 'index.html')  # Aquí se renderiza un archivo HTML para la página de inicio
 
+def base(request):
+    return render(request, 'Home/base.html')
+
+def IndexAdministratoris(request):
+    return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')
+
+
+
 def checkout(request):
     return render(request, 'checkout.html') 
 
@@ -142,13 +150,13 @@ def guardar_reserva(request):
     servicios = Servicio.objects.all()
 
 
-    return render(request, 'ModulusAdministratoris/ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
+    return render(request, 'ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
 
 
 
 #Servicios
 from django.shortcuts import render, redirect,get_object_or_404
-from .forms import ServicioForm
+from .forms import ServicioForm, ProductoForm
 
 
 def crear_servicio(request):
@@ -180,11 +188,35 @@ def editar_servicio(request, id_servicio):
 
     return render(request, 'ModulusAdministratoris/ModuloGestionServicios/editar_servicio.html', {'form': form, 'servicio': servicio})
 
+#Productos
 
+def crear_producto(request):
+    if request.method == 'POST':
+        form = ProductoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Producto creado correctamente.')
+            return redirect('crear_producto')
+    else:
+        form = ProductoForm()
 
+    return render(request, 'ModulusAdministratoris/ModuloGestionProductos/crear_producto.html', {'form': form})
 
+def lista_productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'ModulusAdministratoris/ModuloGestionProductos/lista_productos.html', {'productos': productos})
 
+def editar_producto(request, id_producto):
+    producto = get_object_or_404(Producto, id_producto=id_producto)
 
+    if request.method == 'POST':
+        form = ProductoForm(request.POST, instance=producto)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_productos')
+    else:
+        form = ProductoForm(instance=producto)
 
+    return render(request, 'ModulusAdministratoris/ModuloGestionProductos/editar_producto.html', {'form': form, 'producto': producto})
 
 

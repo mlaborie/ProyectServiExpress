@@ -17,3 +17,8 @@ class ServicioForm(forms.ModelForm):
     class Meta:
         model = Servicio
         fields = '__all__' 
+
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = '__all__' 
