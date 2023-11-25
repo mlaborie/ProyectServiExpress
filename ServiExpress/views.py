@@ -220,3 +220,131 @@ def editar_producto(request, id_producto):
     return render(request, 'ModulusAdministratoris/ModuloGestionProductos/editar_producto.html', {'form': form, 'producto': producto})
 
 
+# Modulo Ordenes de compra
+
+from decimal import Decimal
+from django.shortcuts import render
+from .models import Producto, OrdenDeCompra
+
+def producto_to_dict(producto):
+    return {
+        'id_producto': producto.id_producto,
+        'nombre': producto.nombre,
+        'descripcion': producto.descripcion,
+        'precio': float(producto.precio),
+        # Agrega más campos si es necesario
+    }
+
+def dict_to_producto(diccionario):
+    return Producto(
+        id_producto=diccionario['id_producto'],
+        nombre=diccionario['nombre'],
+        descripcion=diccionario['descripcion'],
+        precio=Decimal(str(diccioniario['precio'])),
+        # Reconstruye más campos si es necesario
+    )
+
+def calcular_precio_total(productos_agregados):
+    total = Decimal('0.00')
+    for producto in productos_agregados:
+        subtotal = Decimal(str(producto['subtotal']))
+        total += subtotal
+    return total
+
+from datetime import datetime
+
+def generar_orden_compra(request):
+    productos = Producto.objects.all()
+
+    # Elimina la lista de productos agregados en la sesión al cargar la página
+    if request.method == "GET":
+        request.session.pop('productos_agregados', None)
+
+    productos_agregados = request.session.get('productos_agregados', [])
+
+    if request.method == "POST":
+        producto_id = request.POST.get("id_producto")
+        cantidad = request.POST.get("cantidad")
+        precio = request.POST.get("precio")
+        proveedor_id = Producto.objects.get(pk=producto_id).id_proveedor_id
+
+        orden_compra = OrdenDeCompra.objects.create(
+            id_proveedor=proveedor_id,
+            id_producto=producto_id,
+            cantidad=cantidad,
+            precio=precio,
+            empleado=request.user.id,
+            comentario=f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        )
+
+        producto = Producto.objects.get(pk=producto_id)
+        productos_agregados.append({
+            'producto': producto_to_dict(producto),
+            'cantidad': cantidad,
+            'precio': float(precio),
+            'subtotal': float(cantidad) * float(precio)
+        })
+
+        request.session['productos_agregados'] = productos_agregados
+
+    precio_total = calcular_precio_total(productos_agregados)
+
+    return render(request, "generar_orden_compra.html", {
+        "productos": productos,
+        "productos_agregados": productos_agregados,
+        "precio_total": precio_total
+    })
+
+def lista_ordenes_de_compra(request):
+    ordenes_de_compra = OrdenDeCompra.objects.all()
+    return render(request, 'lista_ordenes_de_compra.html', {'ordenes_de_compra': ordenes_de_compra})
+
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from reportlab.pdfgen import canvas
+from .models import OrdenDeCompra
+
+def detalle_orden_de_compra(request, orden_id):
+    orden = get_object_or_404(OrdenDeCompra, pk=orden_id)
+
+    # Crear un objeto HttpResponse con el tipo de contenido del PDF
+    response = HttpResponse(content_type='application/pdf')
+    # Establecer el nombre del archivo PDF
+    response['Content-Disposition'] = f'filename=orden_de_compra_{orden.id_orden_de_pedido}.pdf'
+
+    # Crear el objeto PDF, usando el objeto HttpResponse como su "archivo"
+    p = canvas.Canvas(response)
+
+    # Establecer el tamaño de la página
+    p.setPageSize((400, 600))
+
+    # Agregar contenido al PDF
+    p.setFont("Helvetica", 12)
+    p.drawString(50, 500, "Orden de Compra")
+    p.drawString(50, 480, f'Orden de Compra ID: {orden.id_orden_de_pedido}')
+    p.drawString(50, 460, f'Fecha: {orden.comentario}')  # Asegúrate de tener el campo 'fecha' en tu modelo
+    p.drawString(50, 440, f'Proveedor: {orden.id_proveedor.razonSocial}')
+    
+    # Agregar detalles de la orden de compra
+    p.drawString(50, 420, f'Producto: {orden.id_producto.nombre}')
+    p.drawString(50, 400, f'Unidades: {orden.cantidad}')
+    p.drawString(50, 380, f'Valor Unitario: {orden.precio}')
+    #p.drawString(50, 360, f'Empleado: {orden.empleado}')
+
+    # Calcular el total
+    total = orden.cantidad * orden.precio
+    p.drawString(50, 320, f'Total: ${total:.2f}')
+
+    # Puedes seguir agregando más detalles y campos según sea necesario
+
+    # Línea separadora
+    p.line(50, 310, 350, 310)
+
+    # Información adicional
+    p.drawString(50, 290, "Gracias por su compra.")
+
+    # Finalizar el PDF y cerrar el objeto Canvas
+    p.showPage()
+    p.save()
+
+    return response

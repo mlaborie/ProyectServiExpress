@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Orden de Compra</title>
+</head>
+<body>
+    <h1>Generar Orden de Compra</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="id_proveedor">Proveedor:</label>
+        <select name="id_proveedor" id="id_proveedor" disabled>
+            <option value="{{ selected_product.id_proveedor.id_proveedor }}">{{ selected_product.id_proveedor.razonSocial }}</option>
+        </select><br><br>
+        
+        <label for="id_producto">Producto:</label>
+        <select name="id_producto" id="id_producto" onchange="updateProveedorAndPrice(this)">
+            <option value="">Seleccione un producto</option>  <!-- Opción en blanco -->
+            {% for producto in productos %}
+                <option value="{{ producto.id_producto }}" data-proveedor="{{ producto.id_proveedor.id_proveedor }}" data-precio="{{ producto.precio }}">{{ producto.nombre }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad" required oninput="updateSubtotal()"><br><br>
+        
+        <label for="precio">Precio:</label>
+        <input type="text" name="precio" id="precio" readonly><br><br>
+        
+        <button type="submit">Agregar Producto</button>
+    </form>
+    
+    <h2>Listado de Productos Agregados:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto_agregado in productos_agregados %}
+                <tr>
+                    <td>{{ producto_agregado.producto.nombre }}</td>
+                    <td>{{ producto_agregado.cantidad }}</td>
+                    <td>{{ producto_agregado.precio }}</td>
+                    <td data-subtotal>{{ producto_agregado.subtotal }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <p>Precio Total: {{ precio_total }}</p>
+    
+    <button>Generar Orden de Compra</button>
+
+    <script>
+        function updateProveedorAndPrice(selectElement) {
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const proveedorId = selectedOption.getAttribute("data-proveedor");
+            const precio = selectedOption.getAttribute("data-precio");
+            const proveedorSelect = document.getElementById("id_proveedor");
+            const precioInput = document.getElementById("precio");
+            proveedorSelect.value = proveedorId;
+            precioInput.value = precio;
+            updateSubtotal();
+        }
+
+        function updateSubtotal() {
+            const cantidadInput = document.getElementById("cantidad");
+            const precioInput = document.getElementById("precio");
+            const subtotalTd = document.querySelector("td[data-subtotal]");
+            const cantidad = parseFloat(cantidadInput.value);
+            const precio = parseFloat(precioInput.value);
+            const subtotal = cantidad * precio;
+            subtotalTd.textContent = subtotal.toFixed(2);
+
+            // Calcular el precio total
+            const subtotales = document.querySelectorAll("td[data-subtotal]");
+            let total = 0;
+            subtotales.forEach(subtotalTd => {
+                total += parseFloat(subtotalTd.textContent);
+            });
+            document.getElementById("precio_total").textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+
