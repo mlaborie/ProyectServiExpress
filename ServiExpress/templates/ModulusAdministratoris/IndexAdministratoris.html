@@ -125,11 +125,32 @@
                 </div>
             </li>
 
+             <!-- Desplegable para Gestion Calendario -->
+             <li class="dropdown">
+                <a href="#" class="dropbtn">Gestion Calendario</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'guardar_reserva' %}">Crear Reserva</a>
+                    <a href="{% url 'calendar' %}">Calendario</a>
+                </div>
+            </li>
+
+             <!-- Desplegable para Gestion Orden de Compra -->
+             <li class="dropdown">
+                <a href="#" class="dropbtn">Gestion Orden de Compra</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'crear_servicio' %}">Crear Orden de Compra</a>
+                    <a href="{% url 'lista_ordenes_de_compra' %}">Lista Orden de Compra</a>
+                </div>
+            </li>
+
+            
+
+
+
+
 
         <li><a href="{% url 'checkout' %}">Checkout</a></li>
-        <li><a href="{% url 'guardar_reserva' %}">Guardar Reserva</a></li>
-        <li><a href="{% url 'calendar' %}">Calendario</a></li>
- 
+
 
     </ul>
 </nav>

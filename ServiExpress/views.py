@@ -66,6 +66,7 @@ def editar_proveedor(request, proveedor_id):
 
 #Reserva
 
+
 class CalendarView(TemplateView):
     template_name = 'ModuloReserva/calendar.html'
 
@@ -251,7 +252,7 @@ def calcular_precio_total(productos_agregados):
         total += subtotal
     return total
 
-from datetime import datetime
+
 
 def generar_orden_compra(request):
     productos = Producto.objects.all()
@@ -289,7 +290,7 @@ def generar_orden_compra(request):
 
     precio_total = calcular_precio_total(productos_agregados)
 
-    return render(request, "generar_orden_compra.html", {
+    return render(request, "ModuloGestionOC/generar_orden_compra.html", {
         "productos": productos,
         "productos_agregados": productos_agregados,
         "precio_total": precio_total
@@ -297,7 +298,7 @@ def generar_orden_compra(request):
 
 def lista_ordenes_de_compra(request):
     ordenes_de_compra = OrdenDeCompra.objects.all()
-    return render(request, 'lista_ordenes_de_compra.html', {'ordenes_de_compra': ordenes_de_compra})
+    return render(request, 'ModuloGestionOC/lista_ordenes_de_compra.html', {'ordenes_de_compra': ordenes_de_compra})
 
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
