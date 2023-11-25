@@ -1,15 +1,18 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-        
         path('', views.base, name='base'),  # Esta ruta vacía representa la página de inicio
-    # Otras rutas y vistas pueden ir aquí si es necesario
+        # Otras rutas y vistas pueden ir aquí si es necesario
         path('base/', views.base, name='base'),
-# Gestionar Proveedores
+        # Gestionar Proveedores
         path('crear_proveedor/', views.crear_proveedor, name='crear_proveedor'),
         path('proveedores/', views.lista_proveedores, name='lista_proveedores'),
         path('proveedores/editar/<int:proveedor_id>/', views.editar_proveedor, name='editar_proveedor'),
         path('checkout/', views.checkout, name='checkout'),
         path('boleta/', views.boleta, name='boleta'),
+        path('cliente/', login_required(views.vista_cliente), name='vista_cliente'),
+        path('vendedor/', login_required(views.vista_vendedor), name='vista_vendedor'),
+        path('admin/', login_required(views.vista_admin), name='vista_admin'),
 ]

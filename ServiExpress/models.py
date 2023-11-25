@@ -1,7 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, Group, Permission
 from django.utils import timezone
-
+from django.contrib.auth.models import User
+from django.db import models
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from .models import Perfil
 
 class Cliente(models.Model):
     rut = models.CharField(max_length=50,primary_key=True)
@@ -137,3 +141,27 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+    
+class Perfil(models.Model):
+    USUARIO_ADMIN = 'admin'
+    USUARIO_CLIENTE = 'cliente'
+    USUARIO_VENDEDOR = 'vendedor'
+
+    TIPOS_USUARIO = [
+        (USUARIO_ADMIN, 'Administrador'),
+        (USUARIO_CLIENTE, 'Cliente'),
+        (USUARIO_VENDEDOR, 'Vendedor'),
+    ]
+
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    tipo_usuario = models.CharField(max_length=10, choices=TIPOS_USUARIO)
+
+    def __str__(self):
+        return f'{self.usuario.username} - {self.get_tipo_usuario_display()}'
+
+class RegistroForm(UserCreationForm):
+    tipo_usuario = forms.ChoiceField(choices=Perfil.TIPOS_USUARIO)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2', 'tipo_usuario']
