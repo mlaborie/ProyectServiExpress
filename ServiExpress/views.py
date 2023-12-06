@@ -2,7 +2,15 @@ from django.shortcuts import render, redirect
 from ServiExpress.models import *
 from .forms import  ProveedorForm
 from django.contrib import messages
+
+
+from django.shortcuts import render, redirect
+from ServiExpress.models import *
+from .forms import  LoginForm, ProveedorForm
+from django.contrib.auth import authenticate, login, logout
 from django.http import  Http404
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from django.views.generic import TemplateView
 import datetime
@@ -26,11 +34,6 @@ def base(request):
 def checkout(request):
     return render(request, 'checkout.html') 
 
-def base(request):
-    return render(request, 'Home/base.html')
-
-def boleta(request):
-    return render(request, 'MenuVendendor/ModuloRegistroBoleta/boleta.html')
 
 #Gestion De Proveedores
 
@@ -198,7 +201,7 @@ def crear_producto(request):
     else:
         form = ProductoForm()
 
-    return render(request, '\ModulusAdministratoris\ModuloGestionProductos\crear_producto.html', {'form': form})
+    return render(request, 'ModulusAdministratoris/ModuloGestionProductos/crear_producto.html', {'form': form})
 
 def lista_productos(request):
     productos = Producto.objects.all()
