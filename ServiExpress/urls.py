@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
         
-        path('', views.base, name='base'),  # Esta ruta vacía representa la página de inicio
+        path('', views.base, name='index'),  # Esta ruta vacía representa la página de inicio
     # Otras rutas y vistas pueden ir aquí si es necesario
         path('base/', views.base, name='base'),
 # Gestionar Proveedores

@@ -70,6 +70,7 @@ class Reserva(models.Model):
     total = models.DecimalField(max_digits=10, decimal_places=2)
 
 class Boleta(models.Model):
+    id_boleta = models.AutoField(primary_key=True)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     productos = models.ManyToManyField(Producto)
     fecha_emision = models.DateField(auto_now_add=True)
@@ -93,6 +94,10 @@ class OrdenDeCompraProveedor(models.Model):
 
 class ReservaCliente(models.Model):
     reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+
+class BoletaCliente(models.Model):
+    boleta = models.ForeignKey(Boleta, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
 
