@@ -26,6 +26,7 @@ def IndexAdministratoris(request):
 def base(request):
     return render(request, 'Home/base.html')
 
+
 #def IndexAdministratoris(request):
  #   return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')
 
