@@ -264,34 +264,72 @@
             </div>
             <div class="auto-container">
                 <div class="content-box">
-                    <h1 class="d_block fs_60 lh_70 fw_bold mb_10">Registrar Proveedor</h1>
+                    <h1 class="d_block fs_60 lh_70 fw_bold mb_10">Editar Proveedor</h1>
                     <ul class="bread-crumb p_relative d_block mb_8 clearfix">
                         <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="index.html">Home</a></li>
-                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Registrar Proveedor</li>
+                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Editar Proveedor</li>
                     </ul>
                 </div>
             </div>
         </section>
         <!-- End Page Title -->
         
-        <!-- Editar-Proveedor -->
-        <section class="Editar-Proveedor">
+<!-- Editar-Proveedor -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-            <body>
-                <div class="edit-box">
-                  <h1>Editar Proveedor</h1>
-                  <form method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Guardar">
-                  </form>
-                  <a href="{% url 'lista_proveedores' %}">Volver</a>
-                </div>
-              </body>
-    </section>
-    <br>
+    .Editar-Proveedor {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        <!-- Editar Proveedor-section end -->
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .contact-form-wrapper {
+        margin-top: 20px;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+
+    /* Estilo específico para los campos de entrada */
+    input[type="text"], input[type="submit"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+
+    }
+</style>
+
+
+<!-- Editar-Proveedor -->
+<section class="Editar-Proveedor">
+    <div class="contact-form-wrapper">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Guardar" class="theme-btn btn-style-one">
+        </form>
+        <a href="{% url 'lista_proveedores' %}" class="theme-btn btn-style-one">Volver</a>
+    </div>
+</section>
+<!-- Editar Proveedor-section end -->
+
 
         <!--Main Footer-->
         <footer class="main-footer-one">

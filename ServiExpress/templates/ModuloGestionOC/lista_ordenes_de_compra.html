@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Órdenes de Compra</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>Lista de Órdenes de Compra</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Numero Orden de Compra</th>
+                <th>Razón Social del Proveedor</th>
+                <th>RUT del Proveedor</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Valor Unitario</th>
+                <th>Fecha Generacion</th>
+                <th>Descargar</th> <!-- Nueva columna para el botón de descarga -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for orden in ordenes_de_compra %}
+                <tr>
+                    <td>{{ orden.id_orden_de_pedido }}</td>
+                    <td>{{ orden.id_proveedor.razonSocial }}</td>
+                    <td>{{ orden.id_proveedor.rut }}</td>
+                    <td>{{ orden.id_producto.nombre }}</td>
+                    <td>{{ orden.cantidad }}</td>
+                    <td>{{ orden.precio }}</td>
+                    <td>{{ orden.comentario }}</td>
+                    <td>
+                        <a href="{% url 'detalle_orden_de_compra_pdf' orden.id_orden_de_pedido %}" target="_blank">Descargar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function descargarPDF(idOrdenDeCompra) {
+            // Crear un nuevo objeto jsPDF
+            const pdf = new jsPDF();
+            
+            // Agregar contenido al PDF
+            pdf.text(`Orden de Compra ID: ${idOrdenDeCompra}`, 10, 10);
+    
+            // Puedes agregar más contenido según tus necesidades
+    
+            // Guardar el PDF como un archivo
+            pdf.save(`orden_de_compra_${idOrdenDeCompra}.pdf`);
+        }
+    </script>
+</body>
+</html>

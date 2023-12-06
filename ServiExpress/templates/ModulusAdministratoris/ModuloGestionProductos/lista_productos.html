@@ -1,0 +1,21 @@
+<!-- ver_editar_productos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver y Editar Productos</title>
+</head>
+<body>
+    <h2>Productos</h2>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                {{ producto.nombre }} - {{ producto.precio }}
+                (<a href="{% url 'editar_producto' id_producto=producto.id_producto %}">Editar</a>)
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

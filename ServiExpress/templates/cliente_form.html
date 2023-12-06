@@ -1,0 +1,6 @@
+<!-- templates/cliente_form.html -->
+<form method="post" action="{% url 'crear_cliente' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Cliente</button>
+  </form>

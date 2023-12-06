@@ -1,0 +1,6 @@
+<!-- templates/user_form.html -->
+<form method="post" action="{% url 'crear_usuario' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Usuario</button>
+  </form>

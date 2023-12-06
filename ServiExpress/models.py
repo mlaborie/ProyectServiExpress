@@ -28,15 +28,6 @@ class Factura(models.Model):
     iva = models.DecimalField(max_digits=10, decimal_places=2)
     total = models.DecimalField(max_digits=10, decimal_places=2)
 
-class OrdenDeCompra(models.Model):
-    id_orden_de_pedido = models.AutoField(primary_key=True)
-    id_proveedor = models.IntegerField()
-    id_producto = models.IntegerField()
-    cantidad = models.IntegerField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    empleado = models.IntegerField()
-    comentario = models.TextField()  
-
 class Proveedor(models.Model):
     id_proveedor = models.AutoField(primary_key=True)
     razonSocial = models.CharField(max_length=50)
@@ -52,6 +43,19 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)
     precio = models.DecimalField(max_digits=10, decimal_places=2)    
+
+class OrdenDeCompra(models.Model):
+    id_orden_de_pedido = models.AutoField(primary_key=True)
+    id_proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.IntegerField()
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    empleado = models.IntegerField()
+    comentario = models.TextField()  
+
+
+
+
     
 class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
