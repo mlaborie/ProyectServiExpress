@@ -30,7 +30,11 @@ def base(request):
 #def IndexAdministratoris(request):
  #   return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')
 
+def menu_vendedor(request):
+    return render(request, 'Modulo vendedor/menu_vendedor.html')
 
+def menu_cliente(request):
+    return render(request, 'Modulo Cliente/home_cliente.html')
 
 def checkout(request):
     return render(request, 'checkout.html') 

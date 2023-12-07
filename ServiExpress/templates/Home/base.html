@@ -14,8 +14,8 @@
                 <img src="{% static 'img/icono2.png' %}" alt="">
                 <h2>Menu de Vistas</h2>
                 <a href="{% url 'IndexAdministratoris' %}"><button type="button" class="btn btn-primary btn-lg">Modulo administrador</button></a>
-                <a href=""><button type="button" class="btn btn-primary btn-lg">Modulo Cliente</button></a>
-                <a href=""><button type="button" class="btn btn-primary btn-lg">Modulo Vendedor</button></a>
+                <a href="{% url 'menu_cliente' %}"><button type="button" class="btn btn-primary btn-lg">Modulo Cliente</button></a>
+                <a href="{% url 'menu_vendedor' %}"><button type="button" class="btn btn-primary btn-lg">Modulo Vendedor</button></a>
             </div>
         </div>
 </body>
