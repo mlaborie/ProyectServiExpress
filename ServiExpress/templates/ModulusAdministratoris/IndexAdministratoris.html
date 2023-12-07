@@ -10,40 +10,87 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'base' %}">
-            <img src="{% static 'img/icono2.png' %}" alt="Bootstrap" width="auto" height="50">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-
-
-
+        <nav> 
+            <ul>        <!-- -->        
+                <!-- Desplegable para GestionProductos -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">GestionProductos</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'crear_producto' %}">Crear Producto</a>
+                        <a href="{% url 'lista_productos' %}">Lista de Productos</a>
+                        <a href="{% url 'editar_producto' id_producto=1 %}">Editar Producto</a>
+                    </div>
+                </li>
+                
+                <!-- Desplegable para GestionProveedores -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">GestionProveedores</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'crear_proveedor' %}">Crear Proveedor</a>
+                        <a href="{% url 'lista_proveedores' %}">Lista de Proveedores</a>
+                        <a href="{% url 'editar_proveedor' proveedor_id=1 %}">Editar Proveedor</a>
+                    </div>
+                </li>
+                 <!-- Desplegable para GestionServicio -->
+                 <li class="dropdown">
+                    <a href="#" class="dropbtn">GestionServicio</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'crear_servicio' %}">Crear Servicio</a>
+                        <a href="{% url 'lista_servicios' %}">Lista de Servicios</a>
+                        <a href="{% url 'editar_servicio' id_servicio=1 %}">Editar Servicio</a>
+                    </div>
+                </li>
+        
+                 <!-- Desplegable para Gestion Calendario -->
+                 <li class="dropdown">
+                    <a href="#" class="dropbtn">Gestion Calendario</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'guardar_reserva' %}">Crear Reserva</a>
+                        <a href="{% url 'calendar' %}">Calendario</a>
+                    </div>
+                </li>
+        
+                 <!-- Desplegable para Gestion Orden de Compra -->
+                 <li class="dropdown">
+                    <a href="#" class="dropbtn">Gestion Orden de Compra</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'crear_servicio' %}">Crear Orden de Compra</a>
+                        <a href="{% url 'lista_ordenes_de_compra' %}">Lista Orden de Compra</a>
+                    </div>
+                </li>
+        
+                 <!-- Desplegable para Gestion Usuarios -->
+                 <li class="dropdown">
+                    <a href="#" class="dropbtn">Gestion Usuarios</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'crear_cliente' %}">Registrarse</a>
+                        <a href="{% url 'crear_empleado' %}">Crear empelado</a>
+                        <a href="{% url 'crear_usuario' %}">Lista Administrados</a>
+                    </div>
+                </li>
+                <a href="{% url 'base' %}">Volver</a>            
+                
+        
+        
+        
+        </ul>
+        </nav>
+        
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    // Cierra el dropdown si se hace clic fuera de él
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    }
+    </script> 
+
 </html>
