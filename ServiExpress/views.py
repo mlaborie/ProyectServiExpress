@@ -73,7 +73,7 @@ def editar_proveedor(request, proveedor_id):
 
 
 class CalendarView(TemplateView):
-    template_name = 'ModuloReserva/calendar.html'
+    template_name = 'Modulo Cliente/ModuloReserva/calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -156,7 +156,7 @@ def guardar_reserva(request):
     servicios = Servicio.objects.all()
 
 
-    return render(request, 'ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
+    return render(request, 'Modulo Cliente/ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
 
 
 
