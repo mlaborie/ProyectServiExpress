@@ -1,0 +1,166 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>ServiExpress</title>
+
+<!-- Fav Icon -->
+
+
+
+<!-- Stylesheets -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="{% static 'css/element_css/preloader.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/scroll_to_top.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/home_cliente.css' %}">
+
+
+</head>
+
+
+<!-- page wrapper -->
+<body>
+    <div class="boxed_wrapper">
+
+        <!-- preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <!-- <div class="preloader-close"></div> -->
+                <div id="handle-preloader" class="handle-preloader home-16"  style="background-image: url('{% static 'img/banner/banner-5.jpg' %}')">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                        <div class="txt-loading">
+                            <span data-text-preloader="S" class="letters-loading">S</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="v" class="letters-loading">v</span>
+                            <span data-text-preloader="i" class="letters-loading">i</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span>
+                            <span data-text-preloader="x" class="letters-loading">x</span>
+                            <span data-text-preloader="p" class="letters-loading">p</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+        <header>
+            <img src="{% static 'img/icono2.png' %}"  class="rounded mx-auto d-block img-fluid" alt="icono ServiExpress"> 
+        </header>
+             
+        <nav class="navbar navbar-expand-lg bg-body" style="background-color: #5DADE2;">
+                <div class="container-fluid">
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'menu_cliente' %}" style="font-size: 18px;">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'calendar' %}" style="font-size: 18px;">Reserva</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                                    Servicios
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Mantenimiento 10.000kms</a></li>
+                                    <li><a class="dropdown-item" href="#">Mantenimiento 30.000kms</a></li>
+                                    <li><a class="dropdown-item" href="#">Mantenimiento 50.000kms</a></li>
+                                </ul>
+                            </li>
+                            <div class="position-absolute bottom-0 end-0">
+                                <li class="nav-item">
+                                <a class="nav-link" href="{% url 'base' %}" style="font-size: 18px;">Volver</a>
+                                </li>
+                            </div>
+
+                            
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
+          <!-- CARRUSEL DE TRES IMAGENES -->
+          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'img/1.png' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/2.png' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'img/3.png' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+        
+        <!--Scroll to top-->
+        <div class="scroll-to-top">
+            <div>
+                <div class="scroll-top-inner">
+                    <div class="scroll-bar">
+                        <div class="bar-inner"></div>
+                    </div>
+                    <div class="scroll-bar-text">Go To Top</div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to top end -->
+
+    </div>
+    <!-- footer -->
+    <div class="copyrights-wrapper copyrights-centered">
+        <div class="container">
+            <div class="min-footer">
+                <p>© 2023 ServiExpress. All rights reserved</p>
+                <img src="{% static 'img/footer/payments-1.png' %}" alt="payments">								
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery plugins -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/scrollbar.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/time_count.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/jquery.nice_select.min.js' %}"></script>
+    <script src="{% static 'js/progresscircle.js' %}"></script>
+    <script src="{% static 'js/jquery_ui.js' %}"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body><!-- End of .page_wrapper -->
+</html>
+
