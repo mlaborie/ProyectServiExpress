@@ -398,11 +398,37 @@ def index30(request):
 def index50 (request):
     return render(request, 'ModuloCliente/ModuloMercadoPago/client/index50.html')
 
-def generar_boleta(request, reserva_id):
-    reserva = Reserva.objects.get(pk=reserva_id)
-    factura = Factura.objects.get(id_reserva=reserva_id)
+def generar_boleta(request, cliente_id):
+    cliente = Cliente.objects.get(pk=cliente_id)
+    servicios = Servicio.objects.all()
 
-    return render(request, 'boleta_template.html', {
-        'reserva': reserva,
-        'factura': factura,
-    })
+    if request.method == 'POST':
+        # Procesar la selección de servicios y generar la factura
+        servicios_seleccionados = request.POST.getlist('servicios')
+        # Realiza la lógica para crear la factura con los servicios seleccionados y el cliente existente
+
+        # Crear la factura
+        nueva_factura = Factura(
+            cliente=cliente,
+            fecha=datetime.now(),
+            total=0
+        )
+        nueva_factura.save()
+        # Crear los detalles de la factura
+        total = 0
+        for servicio_id in servicios_seleccionados:
+            servicio = Servicio.objects.get(pk=servicio_id)
+            total += servicio.precio
+            detalle = DetalleFactura(
+                factura=nueva_factura,
+                servicio=servicio
+            )
+            detalle.save()
+
+        # Actualizar el total de la factura
+        nueva_factura.total = total
+        nueva_factura.save() 
+        # Redirigir a la página de la boleta generada
+        return redirect('boleta_generada', factura_id=nueva_factura.id)
+
+    return render(request, 'boleta_template.html', {'cliente': cliente, 'servicios': servicios})
