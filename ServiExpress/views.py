@@ -74,13 +74,19 @@ def editar_proveedor(request, proveedor_id):
 #Reserva
 
 
+from django.views.generic import TemplateView
+from django.shortcuts import render
+from .models import Reserva
+from datetime import date  # Import 'date' directly from 'datetime'
+import datetime
+
 class CalendarView(TemplateView):
     template_name = 'ModuloCliente/ModuloReserva/calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        today = datetime.date.today()
+        today = date.today()  # Use 'date.today()' directly
         year = int(self.request.GET.get('year', today.year))
         month = int(self.request.GET.get('month', today.month))
 
@@ -88,38 +94,27 @@ class CalendarView(TemplateView):
         years = range(today.year - 2, today.year + 5)
 
         # Lista de tuplas (número de mes, nombre de mes) para el campo desplegable
-        months = [(i, datetime.date(2000, i, 1).strftime('%B')) for i in range(1, 13)]
+        months = [(i, date(2000, i, 1).strftime('%B')) for i in range(1, 13)]
 
         reservations = Reserva.objects.filter(fecha__year=year, fecha__month=month).select_related('cliente')
 
         calendar_data = {}
         for reserva in reservations:
             day = reserva.fecha.day
-            if day not in calendar_data:
-                calendar_data[day] = []
-
-            # Asegúrate de que la relación 'cliente' esté cargada para acceder al Rut
-                reserva.cliente.refresh_from_db()
-
-            # Obtén el servicio asociado a la reserva
-            servicio = reserva.servicio
-            calendar_data[day].append({
+            calendar_data.setdefault(day, []).append({
                 'fecha': reserva.fecha,
-                'hora':reserva.hora,
-                'cliente_nombre': reserva.cliente.nombre,
-                'cliente_apellido': reserva.cliente.apellido,
-                'cliente_rut': reserva.cliente.rut,
-                'cliente_telefono': reserva.cliente.telefono,
-                'cliente_correo': reserva.cliente.correo,
-                'servicio_nombre': servicio.nombre,
-                'servicio_descripcion': servicio.descripcion,
+                'hora': reserva.hora,
+                'cliente': reserva.cliente,
+                'servicio': reserva.servicio,
             })
 
-        context['calendar_data'] = calendar_data
-        context['month'] = datetime.date(year, month, 1).strftime('%B')
-        context['year'] = year
-        context['years'] = years
-        context['months'] = months
+        context.update({
+            'calendar_data': calendar_data,
+            'month': date(year, month, 1).strftime('%B'),
+            'year': year,
+            'years': years,
+            'months': months,
+        })
 
         return context
 
@@ -260,6 +255,7 @@ def calcular_precio_total(productos_agregados):
     return total
 
 
+
 def generar_orden_compra(request):
     productos = Producto.objects.all()
 
@@ -270,19 +266,14 @@ def generar_orden_compra(request):
     productos_agregados = request.session.get('productos_agregados', [])
 
     if request.method == "POST":
-        producto_id = int(request.POST.get("id_producto"))  # Convertir a entero
+        producto_id = request.POST.get("id_producto")
         cantidad = request.POST.get("cantidad")
         precio = request.POST.get("precio")
-        
-        # Obtener la instancia de Producto
-        producto_instancia = Producto.objects.get(pk=producto_id)
-
-        proveedor_id = producto_instancia.id_proveedor_id
-        proveedor_instancia = Proveedor.objects.get(pk=proveedor_id)
+        proveedor_id = Producto.objects.get(pk=producto_id).id_proveedor_id
 
         orden_compra = OrdenDeCompra.objects.create(
-            id_proveedor=proveedor_instancia,
-            id_producto=producto_instancia,  # Asignar la instancia de Producto
+            id_proveedor=proveedor_id,
+            id_producto=producto_id,
             cantidad=cantidad,
             precio=precio,
             empleado=request.user.id,
