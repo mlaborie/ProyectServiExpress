@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index10.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="{% static 'img/icono2.png' %}"  class="rounded mx-auto d-block img-fluid" alt="icono ServiExpress"> 
+    </header>
+         
+    <nav class="navbar navbar-expand-lg bg-body-primary" style="background-color: #ffffff;">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'menu_cliente' %}" style="font-size: 18px;">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'calendar' %}" style="font-size: 18px;">Reserva</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Mantenimiento 10.000kms</a></li>
+                                <li><a class="dropdown-item" href="#">Mantenimiento 30.000kms</a></li>
+                                <li><a class="dropdown-item" href="#">Mantenimiento 50.000kms</a></li>
+                            </ul>
+                        </li>
+                        <div class="position-absolute bottom-0 end-0">
+                            <li class="nav-item">
+                            <a class="nav-link" href="{% url 'base' %}" style="font-size: 18px;">Volver</a>
+                            </li>
+                        </div>
+
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+<!-- imagen central con promocion y boton para ir a Mercado Pago -->
+    <div class="container">
+        <div class="card text-bg-dark">
+            <img src="{% static 'img/promociones/promocion1.png' %}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" class="btn btn-primary">Primary</button>
+                </div>
+            </div>
+          </div>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

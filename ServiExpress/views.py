@@ -388,3 +388,6 @@ def crear_usuario(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'user_form.html', {'form': form})
+
+def index10(request):
+    return render(request, 'ModuloCliente/ModuloMercadoPago/index10.html')

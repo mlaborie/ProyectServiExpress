@@ -38,6 +38,7 @@ urlpatterns = [
 #menu_cliente
 
         path('menu_cliente/',views.menu_cliente,name='menu_cliente'),
+        path('index10/',views.index10, name='index10'),
 
     #Reserva
         path('guardar_reserva/', views.guardar_reserva, name='guardar_reserva'),
