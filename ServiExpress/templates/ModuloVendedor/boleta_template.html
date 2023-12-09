@@ -1,31 +1,39 @@
-<!-- boleta_template.html -->
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generar Boleta</title>
-    <style>
-        /* Tus estilos CSS personalizados aquí */
-    </style>
+    <title>Generar Factura</title>
 </head>
 <body>
-    <div class="boleta">
-        <h2>Generar Boleta para {{ cliente.nombre }} {{ cliente.apellido }}</h2>
+    <h1>Factura</h1>
+    <p>ID de Factura: {{ factura.id_factura }}</p>
+    <p>Fecha: {{ factura.fecha }}</p>
+    
+    <h2>Detalles de la Factura</h2>
+    <table border="1">
+        <tr>
+            <th>ID de Reserva</th>
+            <th>Subtotal</th>
+            <th>IVA</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>{{ factura.id_reserva }}</td>
+            <td>{{ factura.subtotal }}</td>
+            <td>{{ factura.iva }}</td>
+            <td>{{ factura.total }}</td>
+        </tr>
+    </table>
 
-        <!-- Selección de servicios -->
-        <form method="post">
-            {% csrf_token %}
-            <h3>Seleccione los servicios:</h3>
-            {% for servicio in servicios %}
-                <label>
-                    <input type="checkbox" name="servicios" value="{{ servicio.id }}"> {{ servicio.nombre }} - ${{ servicio.precio }}
-                </label><br>
-            {% endfor %}
+    <h2>Detalles del Cliente</h2>
+    <p>Nombre: {{ factura.reserva.cliente.nombre }} {{ factura.reserva.cliente.apellido }}</p>
+    <p>Correo: {{ factura.reserva.cliente.correo }}</p>
+    <p>Dirección: {{ factura.reserva.cliente.direccion }}</p>
 
-            <input type="submit" value="Generar Boleta">
-        </form>
-    </div>
+    <!-- Puedes incluir más detalles según sea necesario -->
+
+    <p>¡Gracias por su compra!</p>
 </body>
 </html>

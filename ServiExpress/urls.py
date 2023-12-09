@@ -50,5 +50,6 @@ urlpatterns = [
 
         path('menu_vendedor/', views.menu_vendedor, name='menu_vendedor'),
         path('genear_boleta/', views.generar_boleta, name='generar_boleta')
+        
 
 ]

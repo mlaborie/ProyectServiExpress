@@ -14,6 +14,8 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from django.views.generic import TemplateView
 import datetime
+from datetime import datetime
+
 
 
 
@@ -258,7 +260,6 @@ def calcular_precio_total(productos_agregados):
     return total
 
 
-
 def generar_orden_compra(request):
     productos = Producto.objects.all()
 
@@ -269,14 +270,19 @@ def generar_orden_compra(request):
     productos_agregados = request.session.get('productos_agregados', [])
 
     if request.method == "POST":
-        producto_id = request.POST.get("id_producto")
+        producto_id = int(request.POST.get("id_producto"))  # Convertir a entero
         cantidad = request.POST.get("cantidad")
         precio = request.POST.get("precio")
-        proveedor_id = Producto.objects.get(pk=producto_id).id_proveedor_id
+        
+        # Obtener la instancia de Producto
+        producto_instancia = Producto.objects.get(pk=producto_id)
+
+        proveedor_id = producto_instancia.id_proveedor_id
+        proveedor_instancia = Proveedor.objects.get(pk=proveedor_id)
 
         orden_compra = OrdenDeCompra.objects.create(
-            id_proveedor=proveedor_id,
-            id_producto=producto_id,
+            id_proveedor=proveedor_instancia,
+            id_producto=producto_instancia,  # Asignar la instancia de Producto
             cantidad=cantidad,
             precio=precio,
             empleado=request.user.id,

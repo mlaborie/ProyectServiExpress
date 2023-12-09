@@ -1,21 +1,198 @@
-<!-- ver_editar_productos.html -->
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver y Editar Productos</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>ServiExpress</title>
+
+<!-- Fav Icon -->
+<link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+<img src="{% static 'static/ima' %}" alt="Mi Imagen">
+
+<!-- Stylesheets -->
+<link href="{% static 'css/font_awesome_all.css' %}" rel="stylesheet">
+<link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+<link href="{% static 'css/icomoon.css' %}" rel="stylesheet">
+<link href="{% static 'css/owl.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+<link href="{% static 'css/hover.css' %}" rel="stylesheet">
+<link href="{% static 'css/global.css' %}" rel="stylesheet">
+<link href="{% static 'css/nice_select.css' %}" rel="stylesheet">
+<link href="{% static 'css/jquery_ui.css' %}" rel="stylesheet">
+<link href="{% static 'css/elpath.css' %}" rel="stylesheet">
+<link href="{% static 'css/progresscircle.css' %}" rel="stylesheet">
+<link href="{% static 'css/hover.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/preloader.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/time-travel.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/categories.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/dot_style_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/owl_nav_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/pagination.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/bootsrap_tuchpin.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/search_popup.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/header_top.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/header_upper.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/header_lower.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/menu_sidebar.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/menu.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/mobile_menu.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/banner.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/cta_section.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/cart_section.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/check_box.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/check_out.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/xs_sidebar.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/page_title.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/feature_block_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/product_block_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/clients_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/newsletter_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/main_footer_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/footer_bottom_one.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/scroll_to_top.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/week_sale.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/add.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/brand.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/blog.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<link href="{% static 'css/ListaProveedores.css' %}" rel="stylesheet">
+
+
+
 </head>
+
+
+<!-- page wrapper -->
 <body>
-    <h2>Productos</h2>
-    <ul>
+    <div class="boxed_wrapper">
+
+        <!-- preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">x</div>
+                <div id="handle-preloader" class="handle-preloader home-16"  style="background-image: url('{% static 'img/banner/banner-5.jpg' %}')">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                        <div class="txt-loading">
+                            <span data-text-preloader="S" class="letters-loading">S</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="v" class="letters-loading">v</span>
+                            <span data-text-preloader="i" class="letters-loading">i</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span>
+                            <span data-text-preloader="x" class="letters-loading">x</span>
+                            <span data-text-preloader="p" class="letters-loading">p</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+
+        <!-- Page Title -->
+        <section class="page-title p_relative centred">
+            <div class="pattern-layer">
+                <div class="shape-1 p_absolute l_120 t_120 rotate-me" style="background-image: url(assets/images/shape/shape-176.png);"></div>
+                <div class="shape-2 p_absolute t_180 r_170 float-bob-y" style="background-image: url(assets/images/shape/shape-56.png);"></div>
+                <div class="shape-3 p_absolute l_0 b_0" style="background-image: url(assets/images/shape/shape-189.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1 class="d_block fs_60 lh_70 fw_bold mb_10">Lista de Productos</h1>
+                    <ul class="bread-crumb p_relative d_block mb_8 clearfix">
+                        <li class="p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte mr_20"><a href="{% url 'IndexAdministratoris' %}">Home</a></li>
+                        <li class="current p_relative d_iblock fs_16 lh_25 fw_sbold font_family_inte">Lista de Productos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End Page Title -->
+        
+        <!-- styles -->
+        <style>
+            /* Estilos adicionales según tus preferencias */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .inner-box {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+    
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+    
+            th, td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+    
+            th {
+                background-color: #f2f2f2;
+            }
+    
+            .contact-input {
+                padding: 8px;
+                width: 200px;
+            }
+        </style>
+        <center>
+    <table>
         {% for producto in productos %}
             <li>
                 {{ producto.nombre }} - {{ producto.precio }}
                 (<a href="{% url 'editar_producto' id_producto=producto.id_producto %}">Editar</a>)
             </li>
         {% endfor %}
-    </ul>
-</body>
+    </table>
+    <br>
+        <a class="theme-btn theme-btn-eight" href="{% url 'IndexAdministratoris' %}" style="font-size: 18px;">Volver</a>
+    </center>
+    <!-- jQuery plugins -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/scrollbar.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/time_count.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/jquery.nice_select.min.js' %}"></script>
+    <script src="{% static 'js/progresscircle.js' %}"></script>
+    <script src="{% static 'js/jquery_ui.js' %}"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body><!-- End of .page_wrapper -->
 </html>
+
