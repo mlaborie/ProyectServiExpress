@@ -390,4 +390,4 @@ def crear_usuario(request):
     return render(request, 'user_form.html', {'form': form})
 
 def index10(request):
-    return render(request, 'ModuloCliente/ModuloMercadoPago/index10.html')
+    return render(request, 'ModuloCliente/ModuloMercadoPago/client/index10.html')
