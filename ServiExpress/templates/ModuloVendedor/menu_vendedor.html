@@ -1,13 +1,124 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServiExpress-Vendedor</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>ServiExpress</title>
+
+<!-- Fav Icon -->
+
+
+
+<!-- Stylesheets -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="{% static 'css/element_css/preloader.css' %}" rel="stylesheet">
+<link href="{% static 'css/element_css/scroll_to_top.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/home_cliente.css' %}">
+
+
 </head>
+
+
+<!-- page wrapper -->
 <body>
-    <h1>ServiExpress</h1>
-    <p>Pagina para que vendedor pueda realizar boleta asociada a cliente y a servicios requeridos</p>
-</body>
+    <div class="boxed_wrapper">
+
+        <!-- preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <!-- <div class="preloader-close"></div> -->
+                <div id="handle-preloader" class="handle-preloader home-16"  style="background-image: url('{% static 'img/banner/banner-5.jpg' %}')">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                        <div class="txt-loading">
+                            <span data-text-preloader="S" class="letters-loading">S</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="v" class="letters-loading">v</span>
+                            <span data-text-preloader="i" class="letters-loading">i</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span>
+                            <span data-text-preloader="x" class="letters-loading">x</span>
+                            <span data-text-preloader="p" class="letters-loading">p</span>
+                            <span data-text-preloader="r" class="letters-loading">r</span>
+                            <span data-text-preloader="e" class="letters-loading">e</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                            <span data-text-preloader="s" class="letters-loading">s</span>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+        <header style="opacity: 50%;">
+            <img src="{% static 'img/icono2.png' %}"  class="rounded mx-auto d-block img-fluid" alt="icono ServiExpress"> 
+        </header>
+        
+        <!-- BOTONES DE PAGO, PARA GENERAR BOLETAS -->
+        <div class="container-fluid">
+            <div class="row">
+                <div>
+                    <a href="{% url 'generar_boleta' %}" class="btn btn-outline-success btn-lg " role="button" aria-pressed="true">Generar Boleta</a>
+                </div>
+                <br><br>
+                <br>
+                <div>
+                    <a href="{% url 'base' %}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Volver</a>
+                </div>
+            </div>
+
+
+          <!-- CARRUSEL DE TRES IMAGENES -->
+          
+          
+        
+        <!--Scroll to top-->
+        <div class="scroll-to-top">
+            <div>
+                <div class="scroll-top-inner">
+                    <div class="scroll-bar">
+                        <div class="bar-inner"></div>
+                    </div>
+                    <div class="scroll-bar-text">Go To Top</div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to top end -->
+
+    </div>
+    <!-- footer -->
+    <div class="copyrights-wrapper copyrights-centered">
+        <div class="container">
+            <div class="min-footer">
+                <p>© 2023 ServiExpress. All rights reserved</p>
+                <img src="{% static 'img/footer/payments-1.png' %}" alt="payments">								
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery plugins -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/scrollbar.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/time_count.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/jquery.nice_select.min.js' %}"></script>
+    <script src="{% static 'js/progresscircle.js' %}"></script>
+    <script src="{% static 'js/jquery_ui.js' %}"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body><!-- End of .page_wrapper -->
 </html>
+
+

@@ -39,6 +39,8 @@ urlpatterns = [
 
         path('menu_cliente/',views.menu_cliente,name='menu_cliente'),
         path('index10/',views.index10, name='index10'),
+        path('index30/',views.index30, name='index30'),
+        path('index50',views.index50, name='index50'),
 
     #Reserva
         path('guardar_reserva/', views.guardar_reserva, name='guardar_reserva'),
@@ -47,5 +49,6 @@ urlpatterns = [
 #menu_vendedor
 
         path('menu_vendedor/', views.menu_vendedor, name='menu_vendedor'),
+        path('genear_boleta/', views.generar_boleta, name='generar_boleta')
 
 ]

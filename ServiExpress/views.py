@@ -391,3 +391,18 @@ def crear_usuario(request):
 
 def index10(request):
     return render(request, 'ModuloCliente/ModuloMercadoPago/client/index10.html')
+
+def index30(request):
+    return render(request, 'ModuloCliente/ModuloMercadoPago/client/index30.html')
+
+def index50 (request):
+    return render(request, 'ModuloCliente/ModuloMercadoPago/client/index50.html')
+
+def generar_boleta(request, reserva_id):
+    reserva = Reserva.objects.get(pk=reserva_id)
+    factura = Factura.objects.get(id_reserva=reserva_id)
+
+    return render(request, 'boleta_template.html', {
+        'reserva': reserva,
+        'factura': factura,
+    })
