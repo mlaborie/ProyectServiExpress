@@ -31,10 +31,10 @@ def base(request):
  #   return render(request, 'ModulusAdministratoris/IndexAdministratoris.html')
 
 def menu_vendedor(request):
-    return render(request, 'Modulo vendedor/menu_vendedor.html')
+    return render(request, 'ModuloVendedor/menu_vendedor.html')
 
 def menu_cliente(request):
-    return render(request, 'Modulo Cliente/home_cliente.html')
+    return render(request, 'ModuloCliente/home_cliente.html')
 
 def checkout(request):
     return render(request, 'checkout.html') 
@@ -73,7 +73,7 @@ def editar_proveedor(request, proveedor_id):
 
 
 class CalendarView(TemplateView):
-    template_name = 'Modulo Cliente/ModuloReserva/calendar.html'
+    template_name = 'ModuloCliente/ModuloReserva/calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -156,7 +156,7 @@ def guardar_reserva(request):
     servicios = Servicio.objects.all()
 
 
-    return render(request, 'Modulo Cliente/ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
+    return render(request, 'ModuloCliente/ModuloReserva/guardar_reserva.html', {"clientes": clientes, "servicios": servicios})
 
 
 
