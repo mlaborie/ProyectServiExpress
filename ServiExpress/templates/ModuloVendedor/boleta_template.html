@@ -5,25 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boleta de Pago</title>
+    <title>Generar Boleta</title>
     <style>
         /* Tus estilos CSS personalizados aquí */
     </style>
 </head>
 <body>
     <div class="boleta">
-        <div class="encabezado">
+        <h2>Generar Boleta para {{ cliente.nombre }} {{ cliente.apellido }}</h2>
+
+        <!-- Selección de servicios -->
+        <form method="post">
             {% csrf_token %}
-            <p>{{ reserva.servicio.nombre }} - Boleta de Pago</p>
-            <p>Fecha de emisión: {{ factura.fecha }}</p>
-        </div>
-        <div class="detalles">
-            <p>Cliente: {{ reserva.cliente.nombre }} {{ reserva.cliente.apellido }}</p>
-            <p>Fecha de reserva: {{ reserva.fecha }}</p>
-            <p>Hora: {{ reserva.hora }}</p>
-            <p>Servicio: {{ reserva.servicio.nombre }}</p>
-            <p>Total: ${{ factura.total }}</p>
-        </div>
+            <h3>Seleccione los servicios:</h3>
+            {% for servicio in servicios %}
+                <label>
+                    <input type="checkbox" name="servicios" value="{{ servicio.id }}"> {{ servicio.nombre }} - ${{ servicio.precio }}
+                </label><br>
+            {% endfor %}
+
+            <input type="submit" value="Generar Boleta">
+        </form>
     </div>
 </body>
 </html>
